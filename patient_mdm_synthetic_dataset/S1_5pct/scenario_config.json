@@ -1,0 +1,8 @@
+{
+  "scenario": "S1_5pct",
+  "target_anomaly_rate": 0.05,
+  "definition": "Target probability of applying at least one general perturbation per record; source-specific and temporal perturbations may increase the observed rate.",
+  "same_reference_population_and_source_membership": true,
+  "ground_truth_file": "../ground_truth.csv (evaluation only; never a matching input)",
+  "seed": 20261031
+}

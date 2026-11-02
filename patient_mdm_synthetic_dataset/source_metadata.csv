@@ -1,0 +1,6 @@
+source_system,identity_file,operational_file,local_patient_id_column,reference_population_coverage_target,description,quality_profile
+ADMISSION_SYS,admission_patients.csv,admissions.csv,patient_id,0.8,Gestion des admissions et séjours,Erreurs de saisie et téléphones incomplets
+LAB_SYS,lab_patients.csv,lab_tests.csv,lab_patient_id,0.65,Gestion des demandes d'analyses de laboratoire,Dates de naissance manquantes et variations orthographiques
+RADIOLOGY_SYS,radiology_patients.csv,radiology_exams.csv,radiology_patient_id,0.45,Gestion des examens d'imagerie,Identités incomplètes et prénoms abrégés
+CONSULTATION_SYS,consultation_patients.csv,consultations.csv,consultation_patient_id,0.7,Gestion des consultations,Variations de noms/adresses et téléphones anciens
+BILLING_SYS,billing_patients.csv,billing_records.csv,billing_patient_id,0.6,Gestion des opérations de facturation,Informations administratives anciennes et formats variables

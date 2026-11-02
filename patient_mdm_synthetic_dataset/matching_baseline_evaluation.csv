@@ -1,0 +1,4 @@
+scenario,auto_match_true_positives,auto_match_false_positives,auto_match_precision,auto_match_recall_all_cross_source_truth_pairs,auto_match_f1,true_pairs_sent_to_review,false_pairs_sent_to_review,total_cross_source_truth_pairs,hard_nonmatch_pairs_in_eval_file,hard_nonmatch_false_auto_matches,evaluation_note
+S1_5pct,7747,3,0.9996,0.9088,0.9521,590,388,8524,75,0,Ground truth and hard homonyms used only after candidate predictions were written; same-source homonyms excluded by design.
+S2_15pct,7279,3,0.9996,0.8539,0.921,1060,1002,8524,75,0,Ground truth and hard homonyms used only after candidate predictions were written; same-source homonyms excluded by design.
+S3_30pct,6478,13,0.998,0.76,0.8629,1855,1776,8524,75,0,Ground truth and hard homonyms used only after candidate predictions were written; same-source homonyms excluded by design.

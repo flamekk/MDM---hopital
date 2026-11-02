@@ -1,0 +1,64 @@
+scenario,check,passed,details
+S1_5pct,ADMISSION_SYS: identity schema,True,1722 rows
+S1_5pct,ADMISSION_SYS: local ID uniqueness,True,1722 unique / 1722
+S1_5pct,ADMISSION_SYS: event foreign keys,True,0 invalid FKs
+S1_5pct,ADMISSION_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S1_5pct,LAB_SYS: identity schema,True,1399 rows
+S1_5pct,LAB_SYS: local ID uniqueness,True,1399 unique / 1399
+S1_5pct,LAB_SYS: event foreign keys,True,0 invalid FKs
+S1_5pct,LAB_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S1_5pct,RADIOLOGY_SYS: identity schema,True,969 rows
+S1_5pct,RADIOLOGY_SYS: local ID uniqueness,True,969 unique / 969
+S1_5pct,RADIOLOGY_SYS: event foreign keys,True,0 invalid FKs
+S1_5pct,RADIOLOGY_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S1_5pct,CONSULTATION_SYS: identity schema,True,1507 rows
+S1_5pct,CONSULTATION_SYS: local ID uniqueness,True,1507 unique / 1507
+S1_5pct,CONSULTATION_SYS: event foreign keys,True,0 invalid FKs
+S1_5pct,CONSULTATION_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S1_5pct,BILLING_SYS: identity schema,True,1292 rows
+S1_5pct,BILLING_SYS: local ID uniqueness,True,1292 unique / 1292
+S1_5pct,BILLING_SYS: event foreign keys,True,0 invalid FKs
+S1_5pct,BILLING_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S2_15pct,ADMISSION_SYS: identity schema,True,1722 rows
+S2_15pct,ADMISSION_SYS: local ID uniqueness,True,1722 unique / 1722
+S2_15pct,ADMISSION_SYS: event foreign keys,True,0 invalid FKs
+S2_15pct,ADMISSION_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S2_15pct,LAB_SYS: identity schema,True,1399 rows
+S2_15pct,LAB_SYS: local ID uniqueness,True,1399 unique / 1399
+S2_15pct,LAB_SYS: event foreign keys,True,0 invalid FKs
+S2_15pct,LAB_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S2_15pct,RADIOLOGY_SYS: identity schema,True,969 rows
+S2_15pct,RADIOLOGY_SYS: local ID uniqueness,True,969 unique / 969
+S2_15pct,RADIOLOGY_SYS: event foreign keys,True,0 invalid FKs
+S2_15pct,RADIOLOGY_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S2_15pct,CONSULTATION_SYS: identity schema,True,1507 rows
+S2_15pct,CONSULTATION_SYS: local ID uniqueness,True,1507 unique / 1507
+S2_15pct,CONSULTATION_SYS: event foreign keys,True,0 invalid FKs
+S2_15pct,CONSULTATION_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S2_15pct,BILLING_SYS: identity schema,True,1292 rows
+S2_15pct,BILLING_SYS: local ID uniqueness,True,1292 unique / 1292
+S2_15pct,BILLING_SYS: event foreign keys,True,0 invalid FKs
+S2_15pct,BILLING_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S3_30pct,ADMISSION_SYS: identity schema,True,1722 rows
+S3_30pct,ADMISSION_SYS: local ID uniqueness,True,1722 unique / 1722
+S3_30pct,ADMISSION_SYS: event foreign keys,True,0 invalid FKs
+S3_30pct,ADMISSION_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S3_30pct,LAB_SYS: identity schema,True,1399 rows
+S3_30pct,LAB_SYS: local ID uniqueness,True,1399 unique / 1399
+S3_30pct,LAB_SYS: event foreign keys,True,0 invalid FKs
+S3_30pct,LAB_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S3_30pct,RADIOLOGY_SYS: identity schema,True,969 rows
+S3_30pct,RADIOLOGY_SYS: local ID uniqueness,True,969 unique / 969
+S3_30pct,RADIOLOGY_SYS: event foreign keys,True,0 invalid FKs
+S3_30pct,RADIOLOGY_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S3_30pct,CONSULTATION_SYS: identity schema,True,1507 rows
+S3_30pct,CONSULTATION_SYS: local ID uniqueness,True,1507 unique / 1507
+S3_30pct,CONSULTATION_SYS: event foreign keys,True,0 invalid FKs
+S3_30pct,CONSULTATION_SYS: no truth column in source,True,Truth fields absent from matching inputs
+S3_30pct,BILLING_SYS: identity schema,True,1292 rows
+S3_30pct,BILLING_SYS: local ID uniqueness,True,1292 unique / 1292
+S3_30pct,BILLING_SYS: event foreign keys,True,0 invalid FKs
+S3_30pct,BILLING_SYS: no truth column in source,True,Truth fields absent from matching inputs
+GLOBAL,Ground truth maps every source record,True,6889 truth rows
+GLOBAL,Ground truth separated from scenario inputs,True,Stored at project root; not included in scenario source folders
+GLOBAL,Reference population size,True,2000 reference identities

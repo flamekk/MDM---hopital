@@ -1,0 +1,4 @@
+scenario,source_identity_records,candidate_pairs,match_auto,review,non_match,blocking_method,input_files,truth_used_during_matching
+S1_5pct,6889,28953,7750,978,20225,DOB+last name OR phone OR full name,standardized identity CSVs only,False
+S2_15pct,6889,28217,7282,2062,18873,DOB+last name OR phone OR full name,standardized identity CSVs only,False
+S3_30pct,6889,27128,6491,3631,17006,DOB+last name OR phone OR full name,standardized identity CSVs only,False

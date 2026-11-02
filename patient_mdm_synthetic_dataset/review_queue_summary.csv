@@ -1,0 +1,4 @@
+scenario,pair_review_cases,attribute_conflict_cases,conflicts_pending,conflicts_monitor_only,pair_cases_initially_pending
+S1_5pct,978,204,0,204,978
+S2_15pct,2062,481,14,467,2062
+S3_30pct,3631,744,36,708,3631

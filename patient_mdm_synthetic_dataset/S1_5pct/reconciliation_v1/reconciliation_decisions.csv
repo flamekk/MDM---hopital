@@ -1,0 +1,2 @@
+case_id,cluster_a,cluster_b,result,reason
+S1_5pct_PAIR_0000001,S1_5pct_GR000004,S1_5pct_GR001724,MERGED,HUMAN_CONFIRMED_AND_SAFETY_CHECKS_PASSED

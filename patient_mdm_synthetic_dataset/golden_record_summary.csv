@@ -1,0 +1,4 @@
+scenario,input_identity_records,golden_records,multi_source_clusters,singleton_clusters,auto_match_edges_considered,edges_accepted_or_already_connected,cluster_merge_rejections,attribute_conflict_rows,conflicts_flagged_for_review
+S1_5pct,6889,2759,1864,895,7750,7405,345,204,0
+S2_15pct,6889,2941,1832,1109,7282,6953,329,481,14
+S3_30pct,6889,3224,1785,1439,6491,6212,279,744,36

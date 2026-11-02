@@ -1,0 +1,4 @@
+scenario,pairwise_cluster_precision,pairwise_cluster_recall,pairwise_cluster_f1,true_positive_pairs,false_positive_pairs,false_negative_pairs,evaluation_used_truth_only_after_clusters_saved
+S1_5pct,1.0,0.8517,0.9199,7406,0,1290,True
+S2_15pct,1.0,0.803,0.8907,6983,0,1713,True
+S3_30pct,0.9984,0.7242,0.8395,6298,10,2398,True

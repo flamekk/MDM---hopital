@@ -1,0 +1,57 @@
+{
+  "project": "Patient MDM - synthetic multi-source identity resolution",
+  "seed": 20261031,
+  "reference_population_size": 2000,
+  "source_systems": {
+    "ADMISSION_SYS": {
+      "coverage_target": 0.8,
+      "identity_file": "admission_patients.csv",
+      "operational_file": "admissions.csv",
+      "local_patient_id_column": "patient_id"
+    },
+    "LAB_SYS": {
+      "coverage_target": 0.65,
+      "identity_file": "lab_patients.csv",
+      "operational_file": "lab_tests.csv",
+      "local_patient_id_column": "lab_patient_id"
+    },
+    "RADIOLOGY_SYS": {
+      "coverage_target": 0.45,
+      "identity_file": "radiology_patients.csv",
+      "operational_file": "radiology_exams.csv",
+      "local_patient_id_column": "radiology_patient_id"
+    },
+    "CONSULTATION_SYS": {
+      "coverage_target": 0.7,
+      "identity_file": "consultation_patients.csv",
+      "operational_file": "consultations.csv",
+      "local_patient_id_column": "consultation_patient_id"
+    },
+    "BILLING_SYS": {
+      "coverage_target": 0.6,
+      "identity_file": "billing_patients.csv",
+      "operational_file": "billing_records.csv",
+      "local_patient_id_column": "billing_patient_id"
+    }
+  },
+  "source_only_records_per_source": {
+    "ADMISSION_SYS": 80,
+    "LAB_SYS": 65,
+    "RADIOLOGY_SYS": 45,
+    "CONSULTATION_SYS": 70,
+    "BILLING_SYS": 60
+  },
+  "within_source_duplicate_rate_target": "approximately 2.5% of records before duplicates are added",
+  "quality_scenarios": {
+    "S1_5pct": 0.05,
+    "S2_15pct": 0.15,
+    "S3_30pct": 0.3
+  },
+  "anomaly_rate_definition": "Probability of applying one general perturbation to a record; source-specific and temporal perturbations may increase observed rate.",
+  "temporal_variations": "Approximately 4% of records may receive a later updated timestamp and a changed phone or address.",
+  "hard_nonmatch_pairs_created": 30,
+  "synthetic_only": true,
+  "important": "ground_truth.csv and reference_population_private.csv must not be provided to matching algorithms.",
+  "hard_nonmatch_pairs_created_per_source": 15,
+  "hard_nonmatch_design": "Within each source, selected records belonging to different synthetic people share first name, last name, and date of birth; other attributes may differ. Pair list is evaluation-only."
+}

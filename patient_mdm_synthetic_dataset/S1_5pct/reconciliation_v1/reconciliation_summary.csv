@@ -1,0 +1,2 @@
+scenario,version,baseline_golden_records,reconciled_golden_records,confirmed_human_decisions,accepted_merge_events,rejected_merge_events,note
+S1_5pct,1,2759,2758,1,1,0,Version append-only; Golden Records de référence inchangés.

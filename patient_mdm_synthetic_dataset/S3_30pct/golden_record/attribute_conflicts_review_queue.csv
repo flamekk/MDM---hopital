@@ -1,0 +1,745 @@
+scenario,golden_record_id,attribute,distinct_nonempty_values,values,resolution,selected_value,needs_review
+S3_30pct,S3_30pct_GR000003,first_name,2,INES || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR000004,first_name,2,MERYEM || Meryem,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR000004,last_name,2,OUAZZANI || Ouazzani,survivorship_rule,Ouazzani,False
+S3_30pct,S3_30pct_GR000007,first_name,2,No || Nour,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR000007,address,2,"103 Rue Ibn Sina, Casa || 103 Rue Ibn Sina, Casablanca",survivorship_rule,"103 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000009,first_name,2,BILAL || Bilal,survivorship_rule,BILAL,False
+S3_30pct,S3_30pct_GR000018,first_name,2,Lia || Lina,survivorship_rule,Lia,False
+S3_30pct,S3_30pct_GR000019,address,2,"104 Rue Oued Ziz, Casablanca || 83 Rue Ibn Sina, Casablanca",survivorship_rule,"104 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000024,last_name,2,NACIRI || Naciri,survivorship_rule,NACIRI,False
+S3_30pct,S3_30pct_GR000025,first_name,2,Omar || Omr,survivorship_rule,Omar,False
+S3_30pct,S3_30pct_GR000030,first_name,4,Khadia || Khadija || Khadja || Khaija,survivorship_rule,Khadija,True
+S3_30pct,S3_30pct_GR000032,phone,2,0694689767 || 0759353649,survivorship_rule,0694689767,False
+S3_30pct,S3_30pct_GR000035,first_name,2,Nour || Nur,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR000039,first_name,2,Nour || Nur,survivorship_rule,Nur,False
+S3_30pct,S3_30pct_GR000040,first_name,2,Aine || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR000040,address,2,"154 Avenue Mohammed V, Casablanca || 6 Boulevard Anfa, Casablanca",survivorship_rule,"6 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000041,first_name,2,Oar || Omar,survivorship_rule,Omar,False
+S3_30pct,S3_30pct_GR000041,address,2,"102 Rue Ibn Sina, Casablanca || 143 Rue Des Fleurs, Casablanca",survivorship_rule,"143 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000042,first_name,3,RANIA || Raia || Rania,survivorship_rule,RANIA,True
+S3_30pct,S3_30pct_GR000047,address,2,"174 Rue Ibn Sina, Casablanca || 27 Boulevard Zerktouni, Casablanca",survivorship_rule,"27 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000052,address,2,"180 Boulevard Anfa, Casablanca || 66 Rue Al Massira, Casablanca",survivorship_rule,"66 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000057,first_name,2,Mia || Mina,survivorship_rule,Mia,False
+S3_30pct,S3_30pct_GR000058,first_name,2,Amie || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR000061,address,2,"13 Avenue Mohammed V, Casablanca || 27 Avenue Mohammed V, Casablanca",survivorship_rule,"27 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000065,phone,2,0621374506 || 0757969699,survivorship_rule,0621374506,False
+S3_30pct,S3_30pct_GR000069,address,2,"31 Boulevard Anfa, Casablanca || 32 Rue Al Massira, Casablanca",survivorship_rule,"32 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000080,first_name,2,SAMI || Sami,survivorship_rule,Sami,False
+S3_30pct,S3_30pct_GR000080,address,3,"38 Boulevard Anfa, Casablanca || 42 Avenue Des Far, Casablanca || 84 Rue Al Massira, Casablanca",survivorship_rule,"84 Rue Al Massira, Casablanca",True
+S3_30pct,S3_30pct_GR000082,first_name,2,YASMINE || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR000082,last_name,2,BOUKILI || Boukili,survivorship_rule,Boukili,False
+S3_30pct,S3_30pct_GR000082,address,2,"27 Rue Al Massira, Casablanca || 32 Rue Des Fleurs, Casablanca",survivorship_rule,"27 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000083,address,2,"144 Rue Oued Ziz, Casablanca || 88 Rue Des Fleurs, Casablanca",survivorship_rule,"144 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000086,first_name,3,ILYAS || Ilyas || Ilys,survivorship_rule,Ilyas,True
+S3_30pct,S3_30pct_GR000087,first_name,2,Yousef || Youssef,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR000088,phone,2,0668292068 || 0703719211,survivorship_rule,0703719211,False
+S3_30pct,S3_30pct_GR000092,first_name,2,NAJOUA || Najoua,survivorship_rule,NAJOUA,False
+S3_30pct,S3_30pct_GR000092,address,2,"60 Boulevard Zerktouni, Casa || 60 Boulevard Zerktouni, Casablanca",survivorship_rule,"60 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000094,address,2,"50 Rue Des Fleurs, Casablanca || 88 Rue Des Fleurs, Casablanca",survivorship_rule,"88 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000103,first_name,3,MINA || Mina || Mn,survivorship_rule,Mina,True
+S3_30pct,S3_30pct_GR000103,last_name,2,OUAZZANI || Ouazzani,survivorship_rule,Ouazzani,False
+S3_30pct,S3_30pct_GR000108,address,2,"57 Rue Des Fleurs, Casablanca || 63 Avenue Hassan Ii, Casablanca",survivorship_rule,"63 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000115,last_name,2,ZEROUALI || Zerouali,survivorship_rule,ZEROUALI,False
+S3_30pct,S3_30pct_GR000119,address,2,"172 Rue Des Fleurs, Casablanca || 62 Rue Des Fleurs, Casablanca",survivorship_rule,"62 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000124,first_name,2,Yasmine || Yasmne,survivorship_rule,Yasmne,False
+S3_30pct,S3_30pct_GR000126,first_name,2,Lina || Lna,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR000126,address,2,"149 Rue Al Qods, Casablanca || 28 Rue Al Qods, Casablanca",survivorship_rule,"149 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000127,first_name,2,Saa || Sara,survivorship_rule,Saa,False
+S3_30pct,S3_30pct_GR000129,first_name,2,YOUSSEF || Youssef,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR000133,address,2,"149 Rue Des Fleurs, Casa || 149 Rue Des Fleurs, Casablanca",survivorship_rule,"149 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000139,address,2,"1 Avenue Des Far, Casablanca || 109 Avenue Mohammed V, Casablanca",survivorship_rule,"109 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000150,address,2,"111 Rue Oued Ziz, Casablanca || 86 Avenue Hassan Ii, Casablanca",survivorship_rule,"111 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000151,first_name,2,Najoua || Naoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR000155,address,2,"127 Rue Des Fleurs, Casablanca || 53 Rue Al Massira, Casablanca",survivorship_rule,"127 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000162,last_name,2,BELKADI || Belkadi,survivorship_rule,BELKADI,False
+S3_30pct,S3_30pct_GR000169,first_name,2,Mina || Mna,survivorship_rule,Mina,False
+S3_30pct,S3_30pct_GR000175,first_name,2,Salma || Sama,survivorship_rule,Sama,False
+S3_30pct,S3_30pct_GR000184,first_name,2,Omar || Omr,survivorship_rule,Omr,False
+S3_30pct,S3_30pct_GR000187,phone,2,0742734863 || 0743307501,survivorship_rule,0742734863,False
+S3_30pct,S3_30pct_GR000190,address,2,"179 Rue Al Qods, Casablanca || 85 Avenue Mohammed V, Casablanca",survivorship_rule,"179 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000206,address,2,"101 Rue Ibn Sina, Casablanca || 24 Avenue Mohammed V, Casablanca",survivorship_rule,"101 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000212,first_name,2,Mia || Mina,survivorship_rule,Mia,False
+S3_30pct,S3_30pct_GR000213,last_name,2,Tahiri || Tehiri,survivorship_rule,Tehiri,False
+S3_30pct,S3_30pct_GR000216,phone,2,0658145188 || 0765006519,survivorship_rule,0765006519,False
+S3_30pct,S3_30pct_GR000219,first_name,2,INES || Ines,survivorship_rule,INES,False
+S3_30pct,S3_30pct_GR000219,last_name,2,CHRAIBI || Chraibi,survivorship_rule,CHRAIBI,False
+S3_30pct,S3_30pct_GR000221,last_name,2,TAZI || Tazi,survivorship_rule,Tazi,False
+S3_30pct,S3_30pct_GR000226,first_name,2,SOUFIANE || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR000226,address,2,"98 Avenue Des Far, Casa || 98 Avenue Des Far, Casablanca",survivorship_rule,"98 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000233,address,2,"133 Rue Des Fleurs, Casablanca || 66 Boulevard Zerktouni, Casablanca",survivorship_rule,"66 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000237,phone,2,0602918399 || 0728695609,survivorship_rule,0728695609,False
+S3_30pct,S3_30pct_GR000239,address,2,"10 Boulevard Anfa, Casablanca || 64 Avenue Hassan Ii, Casablanca",survivorship_rule,"10 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000241,first_name,2,Imane || Imne,survivorship_rule,Imne,False
+S3_30pct,S3_30pct_GR000245,first_name,2,MERYEM || Meryem,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR000249,first_name,2,Aas || Anas,survivorship_rule,Anas,False
+S3_30pct,S3_30pct_GR000250,phone,2,0701258250 || 0758564479,survivorship_rule,0701258250,False
+S3_30pct,S3_30pct_GR000257,address,2,"167 Rue Al Massira, Casablanca || 32 Rue Ibn Sina, Casablanca",survivorship_rule,"167 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000261,first_name,2,Ilas || Ilyas,survivorship_rule,Ilyas,False
+S3_30pct,S3_30pct_GR000261,address,2,"159 Rue Oued Ziz, Casablanca || 89 Avenue Des Far, Casablanca",survivorship_rule,"89 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000262,first_name,2,Sofiane || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR000262,address,2,"46 Boulevard Anfa, Casablanca || 6 Avenue Hassan Ii, Casablanca",survivorship_rule,"6 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000268,last_name,2,RAHMANI || Rahmani,survivorship_rule,Rahmani,False
+S3_30pct,S3_30pct_GR000269,address,3,"166 Boulevard Zerktouni, Casa || 166 Boulevard Zerktouni, Casablanca || 22 Rue Al Massira, Casablanca",survivorship_rule,"166 Boulevard Zerktouni, Casablanca",True
+S3_30pct,S3_30pct_GR000276,address,2,"103 Rue Oued Ziz, Casablanca || 107 Avenue Hassan Ii, Casablanca",survivorship_rule,"103 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000285,address,2,"144 Boulevard Zerktouni, Casablanca || 49 Avenue Des Far, Casablanca",survivorship_rule,"49 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000286,first_name,2,Bilal || Bill,survivorship_rule,Bill,False
+S3_30pct,S3_30pct_GR000291,first_name,2,Youssef || Youssf,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR000291,address,2,"173 Rue Des Fleurs, Casablanca || 59 Avenue Mohammed V, Casablanca",survivorship_rule,"173 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000292,last_name,2,NACIRI || Naciri,survivorship_rule,NACIRI,False
+S3_30pct,S3_30pct_GR000293,last_name,2,ALAOUI || Alaoui,survivorship_rule,Alaoui,False
+S3_30pct,S3_30pct_GR000294,first_name,2,MEHDI || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR000298,first_name,2,Bilal || Blal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR000303,phone,2,0611159628 || 0648754657,survivorship_rule,0611159628,False
+S3_30pct,S3_30pct_GR000305,first_name,2,Soufiane || Souiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR000307,first_name,2,SALMA || Salma,survivorship_rule,SALMA,False
+S3_30pct,S3_30pct_GR000307,last_name,2,RAHMANI || Rahmani,survivorship_rule,RAHMANI,False
+S3_30pct,S3_30pct_GR000307,address,2,"56 Rue Ibn Sina, Casablanca || 66 Rue Al Qods, Casablanca",survivorship_rule,"56 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000309,address,2,"35 Avenue Des Far, Casablanca || 78 Rue Al Massira, Casablanca",survivorship_rule,"35 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000313,address,2,"137 Boulevard Anfa, Casablanca || 74 Boulevard Anfa, Casablanca",survivorship_rule,"137 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000322,phone,2,0653636526 || 0681417310,survivorship_rule,0653636526,False
+S3_30pct,S3_30pct_GR000323,first_name,2,BILAL || Bilal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR000325,last_name,2,MOULINE || Mouline,survivorship_rule,Mouline,False
+S3_30pct,S3_30pct_GR000327,last_name,2,NACIRI || Naciri,survivorship_rule,Naciri,False
+S3_30pct,S3_30pct_GR000329,first_name,3,HIBA || Hi || Hiba,survivorship_rule,HIBA,True
+S3_30pct,S3_30pct_GR000329,address,2,"10 Rue Ibn Sina, Casa || 118 Boulevard Zerktouni, Casablanca",survivorship_rule,"118 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000331,address,2,"176 Rue Ibn Sina, Casa || 176 Rue Ibn Sina, Casablanca",survivorship_rule,"176 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000332,first_name,2,Mina || Mna,survivorship_rule,Mna,False
+S3_30pct,S3_30pct_GR000334,first_name,2,SARA || Sara,survivorship_rule,SARA,False
+S3_30pct,S3_30pct_GR000334,last_name,2,BENALI || Benali,survivorship_rule,BENALI,False
+S3_30pct,S3_30pct_GR000338,first_name,2,Najoua || Naoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR000338,address,3,"140 Boulevard Zerktouni, Casablanca || 154 Rue Ibn Sina, Casa || 3 Rue Des Fleurs, Casablanca",survivorship_rule,"140 Boulevard Zerktouni, Casablanca",True
+S3_30pct,S3_30pct_GR000339,last_name,2,BERRADA || Berrada,survivorship_rule,Berrada,False
+S3_30pct,S3_30pct_GR000341,address,2,"115 Avenue Des Far, Casablanca || 130 Boulevard Anfa, Casablanca",survivorship_rule,"130 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000346,first_name,2,Rachid || Racid,survivorship_rule,Rachid,False
+S3_30pct,S3_30pct_GR000354,first_name,3,ILYAS || Ilyas || Iyas,survivorship_rule,ILYAS,True
+S3_30pct,S3_30pct_GR000354,last_name,2,BENALI || Benali,survivorship_rule,BENALI,False
+S3_30pct,S3_30pct_GR000355,first_name,2,Sai || Sami,survivorship_rule,Sami,False
+S3_30pct,S3_30pct_GR000362,first_name,2,Saa || Sara,survivorship_rule,Sara,False
+S3_30pct,S3_30pct_GR000363,last_name,2,ZIANI || Ziani,survivorship_rule,Ziani,False
+S3_30pct,S3_30pct_GR000368,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR000379,address,2,"103 Rue Des Fleurs, Casablanca || 5 Avenue Hassan Ii, Casablanca",survivorship_rule,"5 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000381,first_name,2,SAMI || Sami,survivorship_rule,Sami,False
+S3_30pct,S3_30pct_GR000381,last_name,2,IDRISSI || Idrissi,survivorship_rule,Idrissi,False
+S3_30pct,S3_30pct_GR000384,first_name,2,HIBA || Hiba,survivorship_rule,Hiba,False
+S3_30pct,S3_30pct_GR000384,last_name,2,FASSI || Fassi,survivorship_rule,Fassi,False
+S3_30pct,S3_30pct_GR000387,phone,2,0613132853 || 0614844787,survivorship_rule,0614844787,False
+S3_30pct,S3_30pct_GR000388,first_name,2,Najoua || Najua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR000389,first_name,2,SALMA || Salma,survivorship_rule,Salma,False
+S3_30pct,S3_30pct_GR000389,last_name,2,HADDAD || Haddad,survivorship_rule,Haddad,False
+S3_30pct,S3_30pct_GR000389,address,3,"156 Avenue Hassan Ii, Casablanca || 172 Rue Al Massira, Casablanca || 179 Boulevard Anfa, Casablanca",survivorship_rule,"172 Rue Al Massira, Casablanca",True
+S3_30pct,S3_30pct_GR000392,first_name,2,ADAM || Adam,survivorship_rule,ADAM,False
+S3_30pct,S3_30pct_GR000397,phone,2,0624159229 || 0673566731,survivorship_rule,0673566731,False
+S3_30pct,S3_30pct_GR000398,first_name,2,Ilyas || Iyas,survivorship_rule,Iyas,False
+S3_30pct,S3_30pct_GR000401,address,2,"45 Rue Ibn Sina, Casa || 45 Rue Ibn Sina, Casablanca",survivorship_rule,"45 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000403,phone,2,0662339183 || 0778529723,survivorship_rule,0778529723,False
+S3_30pct,S3_30pct_GR000409,first_name,2,Karim || Krim,survivorship_rule,Krim,False
+S3_30pct,S3_30pct_GR000410,first_name,2,SARA || Sara,survivorship_rule,Sara,False
+S3_30pct,S3_30pct_GR000410,last_name,2,LAHLOU || Lahlou,survivorship_rule,Lahlou,False
+S3_30pct,S3_30pct_GR000411,last_name,2,SAIDI || Saidi,survivorship_rule,Saidi,False
+S3_30pct,S3_30pct_GR000412,address,2,"37 Rue Ibn Sina, Casablanca || 42 Rue Al Qods, Casablanca",survivorship_rule,"37 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000418,first_name,2,SARA || Sara,survivorship_rule,Sara,False
+S3_30pct,S3_30pct_GR000418,address,2,"19 Boulevard Anfa, Casablanca || 97 Avenue Hassan Ii, Casablanca",survivorship_rule,"97 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000419,address,2,"111 Rue Oued Ziz, Casablanca || 77 Rue Ibn Sina, Casablanca",survivorship_rule,"77 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000420,phone,2,0755454164 || 0794186306,survivorship_rule,0755454164,False
+S3_30pct,S3_30pct_GR000421,first_name,2,YOUSSEF || Youssef,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR000421,last_name,2,BENNANI || Bennani,survivorship_rule,Bennani,False
+S3_30pct,S3_30pct_GR000421,address,2,"13 Avenue Des Far, Casablanca || 32 Rue Oued Ziz, Casablanca",survivorship_rule,"32 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000425,address,2,"161 Boulevard Anfa, Casa || 161 Boulevard Anfa, Casablanca",survivorship_rule,"161 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000429,first_name,2,Ilas || Ilyas,survivorship_rule,Ilyas,False
+S3_30pct,S3_30pct_GR000441,first_name,2,LINA || Lina,survivorship_rule,LINA,False
+S3_30pct,S3_30pct_GR000443,first_name,2,Bilal || Bill,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR000443,address,2,"40 Avenue Mohammed V, Casablanca || 96 Boulevard Zerktouni, Casablanca",survivorship_rule,"40 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000461,address,2,"25 Avenue Hassan Ii, Casablanca || 51 Avenue Des Far, Casablanca",survivorship_rule,"25 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000463,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000463,last_name,2,AMRANI || Amrani,survivorship_rule,Amrani,False
+S3_30pct,S3_30pct_GR000467,address,2,"65 Rue Al Massira, Casa || 65 Rue Al Massira, Casablanca",survivorship_rule,"65 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000468,last_name,2,KABBAJ || Kabbaj,survivorship_rule,Kabbaj,False
+S3_30pct,S3_30pct_GR000468,address,2,"179 Rue Al Qods, Casablanca || 55 Avenue Des Far, Casablanca",survivorship_rule,"55 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000478,first_name,3,MEHDI || Mehdi || Mhdi,survivorship_rule,MEHDI,True
+S3_30pct,S3_30pct_GR000478,last_name,2,LAMRANI || Lamrani,survivorship_rule,LAMRANI,False
+S3_30pct,S3_30pct_GR000479,phone,2,0634222893 || 0645802511,survivorship_rule,0634222893,False
+S3_30pct,S3_30pct_GR000482,last_name,2,KABBAJ || Kabbaj,survivorship_rule,Kabbaj,False
+S3_30pct,S3_30pct_GR000488,first_name,2,Kaim || Karim,survivorship_rule,Karim,False
+S3_30pct,S3_30pct_GR000490,first_name,2,Yasine || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR000492,first_name,2,Mehdi || Mehi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR000493,first_name,2,Yousef || Youssef,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR000494,first_name,2,RACHID || Rachid,survivorship_rule,Rachid,False
+S3_30pct,S3_30pct_GR000494,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR000501,address,2,"78 Boulevard Anfa, Casablanca || 91 Rue Al Qods, Casablanca",survivorship_rule,"91 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000502,first_name,2,Medi || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR000503,first_name,2,Khadija || Khadja,survivorship_rule,Khadja,False
+S3_30pct,S3_30pct_GR000509,address,2,"31 Avenue Des Far, Casablanca || 9 Avenue Des Far, Casablanca",survivorship_rule,"31 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000513,first_name,2,Ghita || Ghta,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR000517,address,2,"70 Avenue Mohammed V, Casablanca || 92 Boulevard Zerktouni, Casablanca",survivorship_rule,"70 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000518,first_name,2,Hia || Hiba,survivorship_rule,Hia,False
+S3_30pct,S3_30pct_GR000523,address,2,"105 Avenue Des Far, Casablanca || 117 Rue Des Fleurs, Casablanca",survivorship_rule,"105 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000525,last_name,2,Belkadi || Belkedi,survivorship_rule,Belkadi,False
+S3_30pct,S3_30pct_GR000526,address,2,"102 Rue Al Massira, Casablanca || 160 Avenue Des Far, Casablanca",survivorship_rule,"160 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR000527,address,2,"52 Rue Al Massira, Casablanca || 57 Rue Oued Ziz, Casablanca",survivorship_rule,"52 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000530,address,2,"33 Rue Ibn Sina, Casablanca || 88 Boulevard Zerktouni, Casablanca",survivorship_rule,"33 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000534,address,2,"87 Rue Al Massira, Casa || 87 Rue Al Massira, Casablanca",survivorship_rule,"87 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000535,first_name,2,Mina || Mna,survivorship_rule,Mina,False
+S3_30pct,S3_30pct_GR000540,first_name,2,HAMZA || Hamza,survivorship_rule,HAMZA,False
+S3_30pct,S3_30pct_GR000540,address,2,"161 Rue Oued Ziz, Casablanca || 26 Boulevard Anfa, Casablanca",survivorship_rule,"161 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000545,last_name,2,FASSI || Fassi,survivorship_rule,FASSI,False
+S3_30pct,S3_30pct_GR000549,last_name,2,El Fassi || El-Fassi,survivorship_rule,El Fassi,False
+S3_30pct,S3_30pct_GR000551,first_name,2,Rania || Rnia,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000551,address,2,"131 Avenue Des Far, Casablanca || 8 Rue Al Qods, Casablanca",survivorship_rule,"8 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000554,last_name,2,BELKADI || Belkadi,survivorship_rule,BELKADI,False
+S3_30pct,S3_30pct_GR000558,first_name,2,Mehdi || Mehi,survivorship_rule,Mehi,False
+S3_30pct,S3_30pct_GR000562,first_name,2,NOUR || Nour,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR000562,last_name,2,BENNIS || Bennis,survivorship_rule,Bennis,False
+S3_30pct,S3_30pct_GR000562,phone,2,0661694972 || 0761575625,survivorship_rule,0761575625,False
+S3_30pct,S3_30pct_GR000563,first_name,2,ANAS || Anas,survivorship_rule,ANAS,False
+S3_30pct,S3_30pct_GR000563,last_name,2,FASSI || Fassi,survivorship_rule,FASSI,False
+S3_30pct,S3_30pct_GR000564,address,2,"113 Rue Oued Ziz, Casablanca || 174 Boulevard Zerktouni, Casablanca",survivorship_rule,"113 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000565,first_name,2,INES || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR000565,last_name,2,MANSOURI || Mansouri,survivorship_rule,Mansouri,False
+S3_30pct,S3_30pct_GR000571,address,2,"54 Boulevard Zerktouni, Casablanca || 55 Rue Des Fleurs, Casablanca",survivorship_rule,"54 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000572,first_name,2,Omar || Omr,survivorship_rule,Omr,False
+S3_30pct,S3_30pct_GR000573,first_name,2,Mehdi || Mehi,survivorship_rule,Mehi,False
+S3_30pct,S3_30pct_GR000579,phone,2,0653391501 || 0738549021,survivorship_rule,0738549021,False
+S3_30pct,S3_30pct_GR000582,first_name,3,Mia || Mina || Mna,survivorship_rule,Mna,True
+S3_30pct,S3_30pct_GR000587,first_name,2,Rana || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000588,first_name,3,AMINE || Amine || Amne,survivorship_rule,Amine,True
+S3_30pct,S3_30pct_GR000588,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR000592,first_name,2,Imane || Imne,survivorship_rule,Imne,False
+S3_30pct,S3_30pct_GR000594,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR000596,last_name,2,Slaoui || Sleoui,survivorship_rule,Slaoui,False
+S3_30pct,S3_30pct_GR000597,address,2,"162 Rue Oued Ziz, Casa || 162 Rue Oued Ziz, Casablanca",survivorship_rule,"162 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000610,last_name,2,BENJELLOUN || Benjelloun,survivorship_rule,Benjelloun,False
+S3_30pct,S3_30pct_GR000616,first_name,2,MERYEM || Meryem,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR000616,last_name,2,IDRISSI || Idrissi,survivorship_rule,Idrissi,False
+S3_30pct,S3_30pct_GR000618,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000618,last_name,2,MANSOURI || Mansouri,survivorship_rule,Mansouri,False
+S3_30pct,S3_30pct_GR000618,address,2,"2 Rue Oued Ziz, Casablanca || 7 Rue Ibn Sina, Casablanca",survivorship_rule,"2 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000622,first_name,2,Salma || Sama,survivorship_rule,Sama,False
+S3_30pct,S3_30pct_GR000624,first_name,2,AYA || Aya,survivorship_rule,Aya,False
+S3_30pct,S3_30pct_GR000624,last_name,2,El Fassi || El-Fassi,survivorship_rule,El Fassi,False
+S3_30pct,S3_30pct_GR000625,first_name,2,HIBA || Hiba,survivorship_rule,Hiba,False
+S3_30pct,S3_30pct_GR000625,last_name,2,NACIRI || Naciri,survivorship_rule,Naciri,False
+S3_30pct,S3_30pct_GR000625,address,2,"161 Rue Al Massira, Casablanca || 75 Rue Des Fleurs, Casablanca",survivorship_rule,"161 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000627,first_name,2,Nada || Nadia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR000631,last_name,2,BERRADA || Berrada,survivorship_rule,Berrada,False
+S3_30pct,S3_30pct_GR000632,address,2,"74 Rue Oued Ziz, Casablanca || 76 Rue Ibn Sina, Casablanca",survivorship_rule,"76 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000633,first_name,2,Rania || Rnia,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000644,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000644,last_name,2,SLAOUI || Slaoui,survivorship_rule,Slaoui,False
+S3_30pct,S3_30pct_GR000648,first_name,2,Rachid || Racid,survivorship_rule,Racid,False
+S3_30pct,S3_30pct_GR000653,phone,2,0604814366 || 0640707611,survivorship_rule,0640707611,False
+S3_30pct,S3_30pct_GR000655,first_name,2,YOUSSEF || Youssef,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR000655,last_name,2,AMRANI || Amrani,survivorship_rule,Amrani,False
+S3_30pct,S3_30pct_GR000669,address,2,"43 Rue Al Qods, Casablanca || 85 Rue Des Fleurs, Casablanca",survivorship_rule,"43 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000671,last_name,2,TAZI || Tazi,survivorship_rule,Tazi,False
+S3_30pct,S3_30pct_GR000672,address,2,"173 Rue Des Fleurs, Casablanca || 2 Boulevard Zerktouni, Casablanca",survivorship_rule,"173 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000675,first_name,2,Ham || Hamza,survivorship_rule,Hamza,False
+S3_30pct,S3_30pct_GR000675,address,2,"163 Rue Des Fleurs, Casablanca || 67 Rue Al Qods, Casablanca",survivorship_rule,"67 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000676,last_name,2,BERRADA || Berrada,survivorship_rule,BERRADA,False
+S3_30pct,S3_30pct_GR000677,address,2,"55 Rue Al Massira, Casablanca || 88 Rue Al Qods, Casablanca",survivorship_rule,"88 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000679,first_name,2,Najoua || Naoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR000679,last_name,2,ZIANI || Ziani,survivorship_rule,Ziani,False
+S3_30pct,S3_30pct_GR000685,first_name,2,Khadija || Khadja,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR000685,address,2,"60 Boulevard Anfa, Casablanca || 73 Rue Ibn Sina, Casablanca",survivorship_rule,"73 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000686,address,2,"104 Avenue Mohammed V, Casablanca || 43 Rue Des Fleurs, Casablanca",survivorship_rule,"104 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000693,first_name,2,AY || Aya,survivorship_rule,Aya,False
+S3_30pct,S3_30pct_GR000693,address,2,"179 Rue Des Fleurs, Casa || 179 Rue Des Fleurs, Casablanca",survivorship_rule,"179 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000694,address,2,"172 Avenue Hassan Ii, Casablanca || 35 Avenue Mohammed V, Casablanca",survivorship_rule,"35 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000697,first_name,2,Omar || Omr,survivorship_rule,Omar,False
+S3_30pct,S3_30pct_GR000698,first_name,2,Sofiane || Soufiane,survivorship_rule,Sofiane,False
+S3_30pct,S3_30pct_GR000698,last_name,2,KABBAJ || Kabbaj,survivorship_rule,Kabbaj,False
+S3_30pct,S3_30pct_GR000699,first_name,2,BILAL || Bilal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR000699,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR000700,first_name,2,Saa || Sara,survivorship_rule,Saa,False
+S3_30pct,S3_30pct_GR000703,last_name,2,El Fassi || El-Fassi,survivorship_rule,El Fassi,False
+S3_30pct,S3_30pct_GR000706,first_name,2,SOUFIANE || Soufiane,survivorship_rule,SOUFIANE,False
+S3_30pct,S3_30pct_GR000707,last_name,2,BENALI || Benali,survivorship_rule,Benali,False
+S3_30pct,S3_30pct_GR000708,address,2,"164 Avenue Mohammed V, Casablanca || 172 Avenue Hassan Ii, Casablanca",survivorship_rule,"164 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000709,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR000710,phone,2,0606528370 || 0680924658,survivorship_rule,0680924658,False
+S3_30pct,S3_30pct_GR000716,first_name,2,KHADIJA || Khadija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR000716,last_name,2,IDRISSI || Idrissi,survivorship_rule,Idrissi,False
+S3_30pct,S3_30pct_GR000717,last_name,2,ALAOUI || Alaoui,survivorship_rule,ALAOUI,False
+S3_30pct,S3_30pct_GR000724,address,2,"11 Avenue Hassan Ii, Casablanca || 4 Rue Al Qods, Casablanca",survivorship_rule,"11 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000726,first_name,2,Khadija || Khadja,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR000727,last_name,2,FASSI || Fassi,survivorship_rule,Fassi,False
+S3_30pct,S3_30pct_GR000738,first_name,2,SAMI || Sami,survivorship_rule,Sami,False
+S3_30pct,S3_30pct_GR000742,address,2,"125 Rue Des Fleurs, Casablanca || 28 Rue Al Qods, Casablanca",survivorship_rule,"125 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000745,last_name,2,MOULINE || Mouline,survivorship_rule,Mouline,False
+S3_30pct,S3_30pct_GR000746,first_name,2,AMINE || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR000747,first_name,2,Ies || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR000748,address,2,"121 Rue Al Massira, Casablanca || 16 Rue Ibn Sina, Casablanca",survivorship_rule,"121 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000749,address,2,"178 Rue Al Massira, Casablanca || 18 Rue Al Massira, Casablanca",survivorship_rule,"18 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR000753,first_name,2,Yasine || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR000753,address,2,"177 Rue Oued Ziz, Casablanca || 179 Rue Des Fleurs, Casablanca",survivorship_rule,"177 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000754,phone,2,0718881546 || 0740052508,survivorship_rule,0740052508,False
+S3_30pct,S3_30pct_GR000762,first_name,2,Ay || Aya,survivorship_rule,Aya,False
+S3_30pct,S3_30pct_GR000762,address,2,"145 Boulevard Anfa, Casablanca || 89 Rue Oued Ziz, Casablanca",survivorship_rule,"145 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000763,first_name,2,Rana || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000768,first_name,2,Meh || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR000773,address,2,"150 Boulevard Zerktouni, Casablanca || 43 Rue Des Fleurs, Casablanca",survivorship_rule,"150 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000774,first_name,2,AYA || Aya,survivorship_rule,Aya,False
+S3_30pct,S3_30pct_GR000774,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR000778,address,2,"25 Rue Oued Ziz, Casablanca || 91 Rue Al Massira, Casablanca",survivorship_rule,"25 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000786,last_name,2,FASSI || Fassi,survivorship_rule,Fassi,False
+S3_30pct,S3_30pct_GR000796,address,2,"2 Rue Oued Ziz, Casablanca || 65 Boulevard Zerktouni, Casablanca",survivorship_rule,"2 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000801,first_name,2,Mehdi || Mehi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR000802,first_name,2,MINA || Mina,survivorship_rule,Mina,False
+S3_30pct,S3_30pct_GR000803,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR000807,first_name,3,Mia || Mina || Mna,survivorship_rule,Mina,True
+S3_30pct,S3_30pct_GR000812,last_name,2,El Amrani || El-Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR000816,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR000830,first_name,2,Najoa || Najoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR000831,phone,2,0610800059 || 0713570072,survivorship_rule,0610800059,False
+S3_30pct,S3_30pct_GR000834,address,2,"128 Rue Al Qods, Casablanca || 17 Avenue Mohammed V, Casablanca",survivorship_rule,"128 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000837,first_name,3,Karim || Karm || Krim,survivorship_rule,Karm,True
+S3_30pct,S3_30pct_GR000839,address,2,"128 Rue Al Qods, Casablanca || 39 Rue Al Massira, Casablanca",survivorship_rule,"128 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000843,address,2,"115 Boulevard Anfa, Casa || 115 Boulevard Anfa, Casablanca",survivorship_rule,"115 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000844,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000844,address,2,"116 Boulevard Anfa, Casablanca || 144 Boulevard Anfa, Casablanca",survivorship_rule,"144 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000846,last_name,2,ALAOUI || Alaoui,survivorship_rule,Alaoui,False
+S3_30pct,S3_30pct_GR000850,address,2,"134 Rue Al Qods, Casablanca || 99 Rue Al Qods, Casablanca",survivorship_rule,"134 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000851,first_name,2,Lina || Lna,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR000857,first_name,2,ANAS || Anas,survivorship_rule,Anas,False
+S3_30pct,S3_30pct_GR000866,first_name,2,IMANE || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR000869,first_name,2,Ilas || Ilyas,survivorship_rule,Ilas,False
+S3_30pct,S3_30pct_GR000869,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR000875,address,2,"103 Boulevard Anfa, Casablanca || 125 Boulevard Zerktouni, Casablanca",survivorship_rule,"125 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000880,first_name,2,Ghita || Ghta,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR000882,address,2,"13 Boulevard Zerktouni, Casablanca || 144 Rue Oued Ziz, Casablanca",survivorship_rule,"144 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000885,address,2,"136 Avenue Mohammed V, Casablanca || 45 Avenue Mohammed V, Casablanca",survivorship_rule,"45 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR000887,address,2,"119 Rue Des Fleurs, Casablanca || 148 Rue Des Fleurs, Casablanca",survivorship_rule,"119 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000892,first_name,2,Ghita || Ghta,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR000894,first_name,2,An || Anas,survivorship_rule,Anas,False
+S3_30pct,S3_30pct_GR000897,first_name,3,Rachid || Racid || Rchid,survivorship_rule,Rchid,True
+S3_30pct,S3_30pct_GR000900,address,2,"59 Boulevard Zerktouni, Casablanca || 68 Avenue Mohammed V, Casablanca",survivorship_rule,"59 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000902,phone,2,0678614899 || 0786774244,survivorship_rule,0678614899,False
+S3_30pct,S3_30pct_GR000904,first_name,2,ANAS || Anas,survivorship_rule,ANAS,False
+S3_30pct,S3_30pct_GR000904,address,2,"137 Rue Oued Ziz, Casablanca || 58 Rue Al Qods, Casablanca",survivorship_rule,"58 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000905,first_name,2,Bilal || Bill,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR000905,address,2,"102 Rue Des Fleurs, Casablanca || 82 Avenue Mohammed V, Casablanca",survivorship_rule,"102 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000908,address,3,"170 Rue Al Qods, Casablanca || 35 Rue Al Massira, Casablanca || 61 Rue Des Fleurs, Casablanca",survivorship_rule,"170 Rue Al Qods, Casablanca",True
+S3_30pct,S3_30pct_GR000911,first_name,2,Meryem || Mryem,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR000912,address,2,"94 Rue Ibn Sina, Casa || 94 Rue Ibn Sina, Casablanca",survivorship_rule,"94 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000916,address,2,"102 Boulevard Anfa, Casablanca || 178 Rue Des Fleurs, Casablanca",survivorship_rule,"178 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000920,address,2,"127 Boulevard Zerktouni, Casablanca || 65 Rue Oued Ziz, Casablanca",survivorship_rule,"127 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR000923,phone,2,0749432483 || 0785499530,survivorship_rule,0785499530,False
+S3_30pct,S3_30pct_GR000927,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR000928,address,2,"136 Boulevard Anfa, Casablanca || 147 Rue Ibn Sina, Casablanca",survivorship_rule,"147 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR000932,first_name,3,Rana || Rania || Rnia,survivorship_rule,Rnia,True
+S3_30pct,S3_30pct_GR000934,first_name,2,Maa || Maha,survivorship_rule,Maha,False
+S3_30pct,S3_30pct_GR000943,address,3,"119 Avenue Des Far, Casablanca || 169 Rue Ibn Sina, Casa || 169 Rue Ibn Sina, Casablanca",survivorship_rule,"119 Avenue Des Far, Casablanca",True
+S3_30pct,S3_30pct_GR000944,first_name,2,Lina || Lna,survivorship_rule,Lna,False
+S3_30pct,S3_30pct_GR000952,address,2,"66 Rue Oued Ziz, Casablanca || 81 Avenue Mohammed V, Casablanca",survivorship_rule,"66 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000955,address,2,"107 Boulevard Anfa, Casablanca || 161 Rue Des Fleurs, Casablanca",survivorship_rule,"107 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR000957,address,2,"20 Rue Al Qods, Casablanca || 81 Rue Al Qods, Casablanca",survivorship_rule,"20 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR000959,first_name,2,KARIM || Karim,survivorship_rule,Karim,False
+S3_30pct,S3_30pct_GR000959,address,2,"24 Avenue Hassan Ii, Casablanca || 81 Rue Al Massira, Casablanca",survivorship_rule,"24 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000960,phone,2,0690317919 || 0707184960,survivorship_rule,0690317919,False
+S3_30pct,S3_30pct_GR000961,first_name,2,Raia || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR000964,first_name,2,Soufiane || Sufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR000965,last_name,2,LAHLOU || Lahlou,survivorship_rule,Lahlou,False
+S3_30pct,S3_30pct_GR000969,phone,2,0666124676 || 0679298375,survivorship_rule,0679298375,False
+S3_30pct,S3_30pct_GR000974,first_name,2,NOUR || Nour,survivorship_rule,NOUR,False
+S3_30pct,S3_30pct_GR000976,first_name,2,Sara || Sra,survivorship_rule,Sra,False
+S3_30pct,S3_30pct_GR000976,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR000976,address,2,"128 Avenue Hassan Ii, Casablanca || 177 Rue Ibn Sina, Casablanca",survivorship_rule,"128 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR000989,address,2,"137 Rue Oued Ziz, Casablanca || 17 Avenue Des Far, Casablanca",survivorship_rule,"137 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR000993,first_name,2,Ghi || Ghita,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR000993,last_name,2,BOUKILI || Boukili,survivorship_rule,Boukili,False
+S3_30pct,S3_30pct_GR000993,address,2,"152 Rue Des Fleurs, Casablanca || 84 Avenue Mohammed V, Casablanca",survivorship_rule,"152 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR000997,phone,2,0717914075 || 0747657635,survivorship_rule,0747657635,False
+S3_30pct,S3_30pct_GR000998,last_name,2,EL KHATIB || El Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR001013,first_name,2,AMINE || Amine,survivorship_rule,AMINE,False
+S3_30pct,S3_30pct_GR001016,first_name,2,Ies || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR001025,first_name,2,KARIM || Karim,survivorship_rule,Karim,False
+S3_30pct,S3_30pct_GR001025,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR001026,first_name,2,Ghita || Gita,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR001026,address,2,"172 Rue Ibn Sina, Casa || 172 Rue Ibn Sina, Casablanca",survivorship_rule,"172 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001028,first_name,2,Meh || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR001029,address,2,"152 Boulevard Anfa, Casablanca || 77 Boulevard Anfa, Casablanca",survivorship_rule,"152 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001030,first_name,2,Ies || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR001033,first_name,2,Ami || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001042,first_name,2,Medi || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR001043,first_name,2,Aas || Anas,survivorship_rule,Anas,False
+S3_30pct,S3_30pct_GR001043,phone,2,0734550042 || 0777892788,survivorship_rule,0777892788,False
+S3_30pct,S3_30pct_GR001044,first_name,2,Soufane || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001044,phone,2,0625376680 || 0792700667,survivorship_rule,0625376680,False
+S3_30pct,S3_30pct_GR001045,first_name,2,NAJOUA || Najoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR001045,last_name,2,EL KHATIB || El Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR001047,address,2,"120 Avenue Mohammed V, Casablanca || 172 Avenue Hassan Ii, Casablanca",survivorship_rule,"172 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001049,address,2,"74 Rue Al Qods, Casa || 74 Rue Al Qods, Casablanca",survivorship_rule,"74 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001051,first_name,2,Aine || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001053,first_name,2,Najoa || Najoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR001057,first_name,2,IMANE || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR001057,last_name,2,MOULINE || Mouline,survivorship_rule,Mouline,False
+S3_30pct,S3_30pct_GR001058,phone,2,0690572685 || 0707554369,survivorship_rule,0707554369,False
+S3_30pct,S3_30pct_GR001058,address,2,"144 Rue Des Fleurs, Casablanca || 39 Rue Al Qods, Casablanca",survivorship_rule,"39 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001059,address,2,"172 Boulevard Zerktouni, Casablanca || 88 Boulevard Zerktouni, Casablanca",survivorship_rule,"172 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR001061,address,2,"57 Rue Des Fleurs, Casablanca || 96 Rue Oued Ziz, Casablanca",survivorship_rule,"57 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001062,phone,2,0738335474 || 0748547609,survivorship_rule,0738335474,False
+S3_30pct,S3_30pct_GR001064,address,2,"122 Rue Oued Ziz, Casablanca || 98 Rue Al Qods, Casablanca",survivorship_rule,"98 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001065,first_name,2,Bil || Bilal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR001067,first_name,3,YOUSSEF || Yousef || Youssef,survivorship_rule,YOUSSEF,True
+S3_30pct,S3_30pct_GR001069,phone,2,0613205725 || 0688889516,survivorship_rule,0613205725,False
+S3_30pct,S3_30pct_GR001070,first_name,2,MEHDI || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR001070,last_name,2,RAHMANI || Rahmani,survivorship_rule,Rahmani,False
+S3_30pct,S3_30pct_GR001075,address,2,"115 Avenue Hassan Ii, Casa || 115 Avenue Hassan Ii, Casablanca",survivorship_rule,"115 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001083,last_name,2,MOULINE || Mouline,survivorship_rule,Mouline,False
+S3_30pct,S3_30pct_GR001084,first_name,2,RACHID || Rachid,survivorship_rule,RACHID,False
+S3_30pct,S3_30pct_GR001084,last_name,2,BENNANI || Bennani,survivorship_rule,BENNANI,False
+S3_30pct,S3_30pct_GR001090,first_name,2,Karim || Krim,survivorship_rule,Karim,False
+S3_30pct,S3_30pct_GR001094,first_name,2,ADAM || Adam,survivorship_rule,Adam,False
+S3_30pct,S3_30pct_GR001094,last_name,2,LAMRANI || Lamrani,survivorship_rule,Lamrani,False
+S3_30pct,S3_30pct_GR001097,address,2,"59 Rue Al Massira, Casablanca || 97 Rue Al Massira, Casablanca",survivorship_rule,"59 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR001100,first_name,2,MEHDI || Mehdi,survivorship_rule,MEHDI,False
+S3_30pct,S3_30pct_GR001100,last_name,2,CHRAIBI || Chraibi,survivorship_rule,CHRAIBI,False
+S3_30pct,S3_30pct_GR001101,first_name,2,Mi || Mina,survivorship_rule,Mina,False
+S3_30pct,S3_30pct_GR001102,address,2,"144 Avenue Des Far, Casablanca || 17 Rue Oued Ziz, Casablanca",survivorship_rule,"17 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001104,first_name,2,YOUSSEF || Youssef,survivorship_rule,YOUSSEF,False
+S3_30pct,S3_30pct_GR001105,address,2,"99 Rue Oued Ziz, Casa || 99 Rue Oued Ziz, Casablanca",survivorship_rule,"99 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001106,address,2,"14 Boulevard Anfa, Casa || 14 Boulevard Anfa, Casablanca",survivorship_rule,"14 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001116,first_name,2,Ilyas || Ilys,survivorship_rule,Ilyas,False
+S3_30pct,S3_30pct_GR001120,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR001121,first_name,2,Amie || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001125,first_name,2,Ghita || Gita,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR001130,first_name,2,SALMA || Salma,survivorship_rule,Salma,False
+S3_30pct,S3_30pct_GR001135,address,2,"105 Avenue Hassan Ii, Casablanca || 61 Avenue Des Far, Casablanca",survivorship_rule,"105 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001137,first_name,2,Aine || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001137,address,3,"120 Rue Des Fleurs, Casablanca || 70 Rue Al Qods, Casablanca || 84 Rue Al Massira, Casablanca",survivorship_rule,"84 Rue Al Massira, Casablanca",True
+S3_30pct,S3_30pct_GR001138,first_name,2,KHADIJA || Khadija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001138,last_name,2,LAHLOU || Lahlou,survivorship_rule,Lahlou,False
+S3_30pct,S3_30pct_GR001140,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR001140,last_name,2,BELKADI || Belkadi,survivorship_rule,Belkadi,False
+S3_30pct,S3_30pct_GR001142,last_name,2,LAHLOU || Lahlou,survivorship_rule,LAHLOU,False
+S3_30pct,S3_30pct_GR001150,address,2,"8 Rue Des Fleurs, Casablanca || 94 Rue Ibn Sina, Casablanca",survivorship_rule,"94 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001155,first_name,2,Adam || Adm,survivorship_rule,Adam,False
+S3_30pct,S3_30pct_GR001158,address,2,"143 Rue Oued Ziz, Casablanca || 165 Avenue Des Far, Casablanca",survivorship_rule,"143 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001160,phone,2,0699656678 || 0770324703,survivorship_rule,0770324703,False
+S3_30pct,S3_30pct_GR001161,first_name,2,Ghi || Ghita,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR001165,address,2,"122 Rue Des Fleurs, Casablanca || 62 Rue Des Fleurs, Casablanca",survivorship_rule,"62 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001168,first_name,2,Yasmine || Yasmne,survivorship_rule,Yasmne,False
+S3_30pct,S3_30pct_GR001169,last_name,2,El Fassi || El-Fassi,survivorship_rule,El-Fassi,False
+S3_30pct,S3_30pct_GR001173,first_name,2,KARIM || Karim,survivorship_rule,KARIM,False
+S3_30pct,S3_30pct_GR001173,last_name,2,IDRISSI || Idrissi,survivorship_rule,IDRISSI,False
+S3_30pct,S3_30pct_GR001174,first_name,2,Bial || Bilal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR001175,first_name,2,Khadi || Khadija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001179,address,2,"33 Avenue Mohammed V, Casablanca || 88 Avenue Mohammed V, Casablanca",survivorship_rule,"88 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001184,address,2,"8 Rue Oued Ziz, Casablanca || 85 Rue Ibn Sina, Casablanca",survivorship_rule,"85 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001187,last_name,2,El Fassi || El-Fassi,survivorship_rule,El Fassi,False
+S3_30pct,S3_30pct_GR001188,address,2,"173 Rue Al Massira, Casa || 173 Rue Al Massira, Casablanca",survivorship_rule,"173 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR001189,first_name,2,Sami || Smi,survivorship_rule,Smi,False
+S3_30pct,S3_30pct_GR001191,address,2,"73 Boulevard Anfa, Casa || 73 Boulevard Anfa, Casablanca",survivorship_rule,"73 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001192,first_name,2,Imane || Imne,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR001196,phone,2,0634164955 || 0723343590,survivorship_rule,0723343590,False
+S3_30pct,S3_30pct_GR001199,first_name,2,Hamza || Hmza,survivorship_rule,Hamza,False
+S3_30pct,S3_30pct_GR001206,last_name,2,FASSI || Fassi,survivorship_rule,FASSI,False
+S3_30pct,S3_30pct_GR001206,address,2,"14 Avenue Des Far, Casa || 14 Avenue Des Far, Casablanca",survivorship_rule,"14 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR001208,first_name,2,YOUSSEF || Youssef,survivorship_rule,YOUSSEF,False
+S3_30pct,S3_30pct_GR001208,last_name,2,CHRAIBI || Chraibi,survivorship_rule,CHRAIBI,False
+S3_30pct,S3_30pct_GR001213,last_name,2,KABBAJ || Kabbaj,survivorship_rule,Kabbaj,False
+S3_30pct,S3_30pct_GR001220,last_name,2,El Fassi || El-Fassi,survivorship_rule,El Fassi,False
+S3_30pct,S3_30pct_GR001225,first_name,2,Anas || Ans,survivorship_rule,Anas,False
+S3_30pct,S3_30pct_GR001226,first_name,2,Adam || Adm,survivorship_rule,Adam,False
+S3_30pct,S3_30pct_GR001228,first_name,2,Raia || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR001229,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR001230,last_name,2,MANSOURI || Mansouri,survivorship_rule,MANSOURI,False
+S3_30pct,S3_30pct_GR001230,address,2,"107 Boulevard Anfa, Casablanca || 180 Boulevard Zerktouni, Casablanca",survivorship_rule,"107 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001232,first_name,2,Maha || Mha,survivorship_rule,Mha,False
+S3_30pct,S3_30pct_GR001234,address,3,"171 Avenue Hassan Ii, Casablanca || 40 Rue Al Qods, Casa || 40 Rue Al Qods, Casablanca",survivorship_rule,"171 Avenue Hassan Ii, Casablanca",True
+S3_30pct,S3_30pct_GR001238,first_name,2,Amie || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001241,address,2,"107 Rue Ibn Sina, Casablanca || 135 Rue Al Qods, Casablanca",survivorship_rule,"135 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001242,first_name,2,Kaim || Karim,survivorship_rule,Karim,False
+S3_30pct,S3_30pct_GR001245,address,2,"150 Avenue Mohammed V, Casablanca || 74 Boulevard Anfa, Casablanca",survivorship_rule,"74 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001250,phone,2,0653606553 || 0698374678,survivorship_rule,0653606553,False
+S3_30pct,S3_30pct_GR001252,first_name,2,AMINE || Amine,survivorship_rule,AMINE,False
+S3_30pct,S3_30pct_GR001255,first_name,2,Soufiane || Sufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001260,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR001260,last_name,2,ZEROUALI || Zerouali,survivorship_rule,Zerouali,False
+S3_30pct,S3_30pct_GR001265,first_name,2,YASMINE || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR001266,address,2,"135 Rue Oued Ziz, Casablanca || 66 Avenue Hassan Ii, Casablanca",survivorship_rule,"66 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001267,first_name,2,HIBA || Hiba,survivorship_rule,HIBA,False
+S3_30pct,S3_30pct_GR001269,first_name,2,Soufiane || Souiane,survivorship_rule,Souiane,False
+S3_30pct,S3_30pct_GR001270,address,2,"127 Avenue Mohammed V, Casablanca || 82 Rue Des Fleurs, Casablanca",survivorship_rule,"127 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001271,address,2,"147 Avenue Mohammed V, Casa || 147 Avenue Mohammed V, Casablanca",survivorship_rule,"147 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001272,first_name,2,Ham || Hamza,survivorship_rule,Hamza,False
+S3_30pct,S3_30pct_GR001280,first_name,2,Soufane || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001280,address,2,"135 Rue Oued Ziz, Casablanca || 94 Rue Al Qods, Casablanca",survivorship_rule,"135 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001283,address,2,"111 Avenue Mohammed V, Casablanca || 34 Avenue Mohammed V, Casablanca",survivorship_rule,"111 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001284,last_name,2,El Amrani || El-Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR001294,address,2,"145 Rue Al Massira, Casa || 145 Rue Al Massira, Casablanca",survivorship_rule,"145 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR001296,address,2,"109 Avenue Mohammed V, Casablanca || 22 Rue Ibn Sina, Casablanca",survivorship_rule,"22 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001297,first_name,2,Najoa || Najoua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR001299,first_name,2,Meryem || Merym,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR001299,address,2,"132 Rue Oued Ziz, Casablanca || 91 Rue Ibn Sina, Casablanca",survivorship_rule,"91 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001301,address,2,"133 Rue Des Fleurs, Casablanca || 43 Rue Al Qods, Casablanca",survivorship_rule,"133 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001302,address,2,"42 Boulevard Zerktouni, Casa || 42 Boulevard Zerktouni, Casablanca",survivorship_rule,"42 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR001303,first_name,2,NADIA || Nadia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR001309,first_name,2,SARA || Sara,survivorship_rule,Sara,False
+S3_30pct,S3_30pct_GR001309,last_name,2,TAHIRI || Tahiri,survivorship_rule,Tahiri,False
+S3_30pct,S3_30pct_GR001309,address,2,"99 Rue Ibn Sina, Casa || 99 Rue Ibn Sina, Casablanca",survivorship_rule,"99 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001320,address,2,"143 Avenue Mohammed V, Casablanca || 91 Avenue Mohammed V, Casablanca",survivorship_rule,"91 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001325,address,2,"11 Boulevard Anfa, Casablanca || 29 Rue Ibn Sina, Casablanca",survivorship_rule,"29 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001327,first_name,2,Imae || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR001328,address,2,"70 Avenue Des Far, Casablanca || 80 Rue Des Fleurs, Casablanca",survivorship_rule,"70 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR001330,last_name,2,EL KHATIB || El Khatib,survivorship_rule,EL KHATIB,False
+S3_30pct,S3_30pct_GR001331,first_name,2,Khadija || Khadja,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001331,address,2,"162 Boulevard Anfa, Casablanca || 72 Rue Des Fleurs, Casablanca",survivorship_rule,"162 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001333,first_name,2,Sala || Salma,survivorship_rule,Salma,False
+S3_30pct,S3_30pct_GR001335,first_name,2,Aine || Amine,survivorship_rule,Aine,False
+S3_30pct,S3_30pct_GR001342,first_name,2,NADIA || Nadia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR001343,address,2,"148 Avenue Hassan Ii, Casa || 148 Avenue Hassan Ii, Casablanca",survivorship_rule,"148 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001346,address,2,"10 Rue Ibn Sina, Casablanca || 69 Boulevard Zerktouni, Casablanca",survivorship_rule,"10 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001350,first_name,2,SARA || Sara,survivorship_rule,SARA,False
+S3_30pct,S3_30pct_GR001350,address,2,"110 Boulevard Zerktouni, Casablanca || 48 Rue Des Fleurs, Casablanca",survivorship_rule,"110 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR001351,first_name,2,Khadia || Khadija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001351,address,2,"18 Rue Ibn Sina, Casablanca || 93 Rue Des Fleurs, Casablanca",survivorship_rule,"93 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001352,first_name,2,Nour || Nur,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR001353,address,2,"20 Boulevard Anfa, Casablanca || 93 Avenue Des Far, Casablanca",survivorship_rule,"93 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR001358,last_name,2,ZIANI || Ziani,survivorship_rule,Ziani,False
+S3_30pct,S3_30pct_GR001366,address,2,"3 Rue Al Qods, Casablanca || 70 Rue Al Qods, Casablanca",survivorship_rule,"70 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001370,first_name,2,Ines || Ins,survivorship_rule,Ins,False
+S3_30pct,S3_30pct_GR001375,last_name,2,El Amrani || El-Amrani,survivorship_rule,El-Amrani,False
+S3_30pct,S3_30pct_GR001378,first_name,2,Najoua || Najua,survivorship_rule,Najoua,False
+S3_30pct,S3_30pct_GR001380,first_name,2,Hamz || Hamza,survivorship_rule,Hamza,False
+S3_30pct,S3_30pct_GR001385,first_name,2,Nor || Nour,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR001386,phone,2,0625817346 || 0769534309,survivorship_rule,0625817346,False
+S3_30pct,S3_30pct_GR001386,address,2,"148 Rue Ibn Sina, Casablanca || 158 Rue Al Massira, Casablanca",survivorship_rule,"148 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001388,last_name,2,BENNIS || Bennis,survivorship_rule,Bennis,False
+S3_30pct,S3_30pct_GR001389,first_name,2,AYA || Aya,survivorship_rule,AYA,False
+S3_30pct,S3_30pct_GR001389,last_name,2,BERRADA || Berrada,survivorship_rule,BERRADA,False
+S3_30pct,S3_30pct_GR001390,first_name,2,Khadija || Khadja,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001390,phone,2,0702437438 || 0743531869,survivorship_rule,0702437438,False
+S3_30pct,S3_30pct_GR001391,first_name,2,Lia || Lina,survivorship_rule,Lia,False
+S3_30pct,S3_30pct_GR001391,address,2,"154 Boulevard Anfa, Casablanca || 99 Avenue Hassan Ii, Casablanca",survivorship_rule,"154 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001395,first_name,2,RANIA || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR001395,last_name,2,El Amrani || El-Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR001396,first_name,2,Hba || Hiba,survivorship_rule,Hiba,False
+S3_30pct,S3_30pct_GR001398,first_name,2,HAMZA || Hamza,survivorship_rule,Hamza,False
+S3_30pct,S3_30pct_GR001398,last_name,2,BENNIS || Bennis,survivorship_rule,Bennis,False
+S3_30pct,S3_30pct_GR001405,first_name,2,Maa || Maha,survivorship_rule,Maha,False
+S3_30pct,S3_30pct_GR001411,address,2,"52 Avenue Hassan Ii, Casablanca || 81 Rue Al Qods, Casablanca",survivorship_rule,"52 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001413,first_name,2,Nour || Nur,survivorship_rule,Nur,False
+S3_30pct,S3_30pct_GR001414,first_name,2,LINA || Lina,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR001416,last_name,2,OUAZZANI || Ouazzani,survivorship_rule,Ouazzani,False
+S3_30pct,S3_30pct_GR001419,first_name,2,KARIM || Karim,survivorship_rule,KARIM,False
+S3_30pct,S3_30pct_GR001419,last_name,2,NACIRI || Naciri,survivorship_rule,NACIRI,False
+S3_30pct,S3_30pct_GR001423,first_name,2,Ines || Ins,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR001425,first_name,2,BILAL || Bilal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR001425,last_name,2,AMRANI || Amrani,survivorship_rule,Amrani,False
+S3_30pct,S3_30pct_GR001432,last_name,2,BENJELLOUN || Benjelloun,survivorship_rule,Benjelloun,False
+S3_30pct,S3_30pct_GR001434,first_name,2,Iane || Imane,survivorship_rule,Iane,False
+S3_30pct,S3_30pct_GR001436,first_name,2,YASMINE || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR001436,last_name,2,NACIRI || Naciri,survivorship_rule,Naciri,False
+S3_30pct,S3_30pct_GR001437,first_name,2,INES || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR001438,first_name,2,Amine || Amne,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001443,address,2,"1 Boulevard Anfa, Casablanca || 88 Boulevard Zerktouni, Casablanca",survivorship_rule,"88 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR001448,first_name,2,Adam || Adm,survivorship_rule,Adam,False
+S3_30pct,S3_30pct_GR001449,first_name,2,SAMI || Sami,survivorship_rule,SAMI,False
+S3_30pct,S3_30pct_GR001451,first_name,2,Lina || Lna,survivorship_rule,Lna,False
+S3_30pct,S3_30pct_GR001451,address,2,"107 Avenue Des Far, Casablanca || 175 Avenue Des Far, Casablanca",survivorship_rule,"107 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR001452,address,2,"15 Rue Des Fleurs, Casablanca || 40 Rue Oued Ziz, Casablanca",survivorship_rule,"15 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001453,last_name,2,EL FASSI || El Fassi,survivorship_rule,El Fassi,False
+S3_30pct,S3_30pct_GR001455,address,2,"127 Rue Ibn Sina, Casablanca || 20 Avenue Hassan Ii, Casablanca",survivorship_rule,"20 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001460,first_name,2,Nad || Nadia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR001465,first_name,2,In || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR001466,first_name,2,Hba || Hiba,survivorship_rule,Hiba,False
+S3_30pct,S3_30pct_GR001468,first_name,2,Mi || Mina,survivorship_rule,Mina,False
+S3_30pct,S3_30pct_GR001472,address,2,"179 Boulevard Anfa, Casablanca || 29 Rue Des Fleurs, Casablanca",survivorship_rule,"29 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001474,first_name,2,Soufiane || Soufine,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001475,first_name,2,SARA || Sara,survivorship_rule,SARA,False
+S3_30pct,S3_30pct_GR001475,last_name,2,SAIDI || Saidi,survivorship_rule,SAIDI,False
+S3_30pct,S3_30pct_GR001476,first_name,2,Hba || Hiba,survivorship_rule,Hiba,False
+S3_30pct,S3_30pct_GR001477,first_name,2,LINA || Lina,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR001478,first_name,2,Hamza || Hmza,survivorship_rule,Hmza,False
+S3_30pct,S3_30pct_GR001481,last_name,2,CHRAIBI || Chraibi,survivorship_rule,Chraibi,False
+S3_30pct,S3_30pct_GR001484,last_name,2,BOUKILI || Boukili,survivorship_rule,BOUKILI,False
+S3_30pct,S3_30pct_GR001485,address,2,"27 Avenue Des Far, Casa || 27 Avenue Des Far, Casablanca",survivorship_rule,"27 Avenue Des Far, Casablanca",False
+S3_30pct,S3_30pct_GR001495,first_name,2,Ilyas || Ilys,survivorship_rule,Ilys,False
+S3_30pct,S3_30pct_GR001496,first_name,2,Yamine || Yasmine,survivorship_rule,Yamine,False
+S3_30pct,S3_30pct_GR001499,sex,2,F || M,survivorship_rule,M,False
+S3_30pct,S3_30pct_GR001504,first_name,2,Khadija || Khdija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001504,last_name,2,ALAOUI || Alaoui,survivorship_rule,Alaoui,False
+S3_30pct,S3_30pct_GR001504,address,3,"149 Rue Ibn Sina, Casablanca || 164 Boulevard Zerktouni, Casa || 164 Boulevard Zerktouni, Casablanca",survivorship_rule,"164 Boulevard Zerktouni, Casablanca",True
+S3_30pct,S3_30pct_GR001505,address,2,"109 Boulevard Zerktouni, Casablanca || 150 Rue Al Qods, Casablanca",survivorship_rule,"109 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR001507,address,2,"32 Rue Oued Ziz, Casablanca || 82 Avenue Mohammed V, Casablanca",survivorship_rule,"82 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001512,address,2,"135 Rue Al Qods, Casablanca || 139 Boulevard Zerktouni, Casablanca",survivorship_rule,"135 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001514,address,3,"69 Rue Oued Ziz, Casa || 69 Rue Oued Ziz, Casablanca || 81 Avenue Mohammed V, Casablanca",survivorship_rule,"81 Avenue Mohammed V, Casablanca",True
+S3_30pct,S3_30pct_GR001515,address,2,"109 Avenue Des Far, Casablanca || 13 Avenue Hassan Ii, Casablanca",survivorship_rule,"13 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001518,last_name,2,El Amrani || El-Amrani,survivorship_rule,El-Amrani,False
+S3_30pct,S3_30pct_GR001521,last_name,2,OUAZZANI || Ouazzani,survivorship_rule,Ouazzani,False
+S3_30pct,S3_30pct_GR001525,first_name,2,Yamine || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR001532,address,2,"171 Rue Oued Ziz, Casablanca || 80 Rue Al Massira, Casablanca",survivorship_rule,"80 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR001536,first_name,2,Salma || Slma,survivorship_rule,Salma,False
+S3_30pct,S3_30pct_GR001543,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR001550,first_name,2,RACHID || Rachid,survivorship_rule,Rachid,False
+S3_30pct,S3_30pct_GR001551,last_name,2,SAIDI || Saidi,survivorship_rule,Saidi,False
+S3_30pct,S3_30pct_GR001554,last_name,2,El Amrani || El-Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR001555,address,2,"13 Rue Des Fleurs, Casablanca || 34 Rue Al Qods, Casablanca",survivorship_rule,"13 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001558,first_name,2,Soufane || Soufiane,survivorship_rule,Soufane,False
+S3_30pct,S3_30pct_GR001559,first_name,2,Rachid || Rahid,survivorship_rule,Rachid,False
+S3_30pct,S3_30pct_GR001562,last_name,2,FASSI || Fassi,survivorship_rule,Fassi,False
+S3_30pct,S3_30pct_GR001565,first_name,3,Nada || Nadia || Ndia,survivorship_rule,Nadia,True
+S3_30pct,S3_30pct_GR001566,first_name,2,Karim || Krim,survivorship_rule,Karim,False
+S3_30pct,S3_30pct_GR001567,first_name,3,Ghia || Ghita || Gita,survivorship_rule,Ghita,True
+S3_30pct,S3_30pct_GR001567,address,2,"156 Avenue Mohammed V, Casablanca || 78 Boulevard Anfa, Casablanca",survivorship_rule,"78 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001568,first_name,2,NADIA || Nadia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR001568,last_name,2,ALAOUI || Alaoui,survivorship_rule,Alaoui,False
+S3_30pct,S3_30pct_GR001568,address,2,"149 Avenue Hassan Ii, Casablanca || 167 Rue Al Qods, Casablanca",survivorship_rule,"149 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001571,last_name,2,AMRANI || Amrani,survivorship_rule,Amrani,False
+S3_30pct,S3_30pct_GR001574,first_name,2,Aas || Anas,survivorship_rule,Aas,False
+S3_30pct,S3_30pct_GR001575,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR001576,first_name,2,INES || Ines,survivorship_rule,INES,False
+S3_30pct,S3_30pct_GR001581,first_name,2,IMANE || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR001581,last_name,2,BENALI || Benali,survivorship_rule,Benali,False
+S3_30pct,S3_30pct_GR001581,address,2,"21 Rue Ibn Sina, Casablanca || 32 Rue Des Fleurs, Casablanca",survivorship_rule,"21 Rue Ibn Sina, Casablanca",False
+S3_30pct,S3_30pct_GR001585,address,2,"30 Rue Al Qods, Casablanca || 80 Rue Al Qods, Casablanca",survivorship_rule,"80 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001597,address,2,"82 Boulevard Zerktouni, Casablanca || 95 Rue Des Fleurs, Casablanca",survivorship_rule,"95 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001690,first_name,2,Imae || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR001690,address,2,"52 Rue Des Fleurs, Casa || 52 Rue Des Fleurs, Casablanca",survivorship_rule,"52 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001712,address,2,"113 Boulevard Anfa, Casablanca || 14 Rue Oued Ziz, Casablanca",survivorship_rule,"14 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001723,address,2,"41 Rue Oued Ziz, Casa || 41 Rue Oued Ziz, Casablanca",survivorship_rule,"41 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001729,first_name,2,Aas || Anas,survivorship_rule,Aas,False
+S3_30pct,S3_30pct_GR001731,address,2,"122 Boulevard Anfa, Casablanca || 180 Rue Oued Ziz, Casablanca",survivorship_rule,"122 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001732,first_name,2,Aam || Adam,survivorship_rule,Aam,False
+S3_30pct,S3_30pct_GR001733,first_name,2,Sofiane || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001737,first_name,3,OMAR || Oar || Omar,survivorship_rule,Omar,True
+S3_30pct,S3_30pct_GR001737,last_name,2,FASSI || Fassi,survivorship_rule,Fassi,False
+S3_30pct,S3_30pct_GR001740,first_name,2,Rana || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR001740,address,2,"129 Avenue Hassan Ii, Casablanca || 81 Avenue Mohammed V, Casablanca",survivorship_rule,"81 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001743,first_name,2,Rachid || Racid,survivorship_rule,Rachid,False
+S3_30pct,S3_30pct_GR001747,last_name,2,HADDAD || Haddad,survivorship_rule,HADDAD,False
+S3_30pct,S3_30pct_GR001747,phone,2,0698422986 || 0710072076,survivorship_rule,0710072076,False
+S3_30pct,S3_30pct_GR001752,first_name,3,ILYAS || Ilas || Ilyas,survivorship_rule,ILYAS,True
+S3_30pct,S3_30pct_GR001752,last_name,2,RAHMANI || Rahmani,survivorship_rule,RAHMANI,False
+S3_30pct,S3_30pct_GR001773,first_name,2,ILYAS || Ilyas,survivorship_rule,Ilyas,False
+S3_30pct,S3_30pct_GR001775,first_name,2,HAMZA || Hamza,survivorship_rule,HAMZA,False
+S3_30pct,S3_30pct_GR001775,last_name,2,BENJELLOUN || Benjelloun,survivorship_rule,BENJELLOUN,False
+S3_30pct,S3_30pct_GR001779,phone,2,0665577000 || 0789382409,survivorship_rule,0789382409,False
+S3_30pct,S3_30pct_GR001780,address,2,"127 Rue Al Qods, Casa || 127 Rue Al Qods, Casablanca",survivorship_rule,"127 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001782,first_name,3,ILYAS || Ilyas || Ilys,survivorship_rule,Ilys,True
+S3_30pct,S3_30pct_GR001784,first_name,2,KHADIJA || Khadija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR001784,last_name,2,EL AMRANI || El Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR001785,last_name,2,Kabbaj || Kebbaj,survivorship_rule,Kabbaj,False
+S3_30pct,S3_30pct_GR001790,first_name,2,Meryem || Mryem,survivorship_rule,Mryem,False
+S3_30pct,S3_30pct_GR001795,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR001797,first_name,3,SOUFIANE || Soufia || Soufiane,survivorship_rule,SOUFIANE,True
+S3_30pct,S3_30pct_GR001797,last_name,2,BENNIS || Bennis,survivorship_rule,BENNIS,False
+S3_30pct,S3_30pct_GR001800,first_name,2,NOUR || Nour,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR001801,first_name,2,Ami || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001802,first_name,2,Bil || Bilal,survivorship_rule,Bilal,False
+S3_30pct,S3_30pct_GR001803,first_name,2,Lia || Lina,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR001808,first_name,2,Rachid || Racid,survivorship_rule,Racid,False
+S3_30pct,S3_30pct_GR001811,first_name,2,Ma || Maha,survivorship_rule,Maha,False
+S3_30pct,S3_30pct_GR001814,address,2,"132 Avenue Hassan Ii, Casablanca || 23 Avenue Mohammed V, Casablanca",survivorship_rule,"23 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001815,first_name,2,Soufiane || Sufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001819,first_name,2,Mehdi || Mehi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR001834,first_name,2,MERYEM || Meryem,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR001834,last_name,2,ZIANI || Ziani,survivorship_rule,Ziani,False
+S3_30pct,S3_30pct_GR001842,first_name,2,Sami || Smi,survivorship_rule,Sami,False
+S3_30pct,S3_30pct_GR001845,address,2,"147 Rue Oued Ziz, Casablanca || 86 Rue Des Fleurs, Casablanca",survivorship_rule,"147 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR001846,address,2,"117 Boulevard Zerktouni, Casablanca || 46 Rue Des Fleurs, Casablanca",survivorship_rule,"117 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR001860,first_name,2,LINA || Lina,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR001860,last_name,2,HADDAD || Haddad,survivorship_rule,Haddad,False
+S3_30pct,S3_30pct_GR001870,address,2,"100 Rue Al Qods, Casablanca || 51 Rue Oued Ziz, Casablanca",survivorship_rule,"100 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR001877,first_name,3,Najo || Najoa || Najoua,survivorship_rule,Najoa,True
+S3_30pct,S3_30pct_GR001884,first_name,2,NOUR || Nour,survivorship_rule,NOUR,False
+S3_30pct,S3_30pct_GR001884,last_name,2,BERRADA || Berrada,survivorship_rule,BERRADA,False
+S3_30pct,S3_30pct_GR001885,address,2,"102 Rue Des Fleurs, Casablanca || 97 Boulevard Anfa, Casablanca",survivorship_rule,"102 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR001888,last_name,2,BENJELLOUN || Benjelloun,survivorship_rule,Benjelloun,False
+S3_30pct,S3_30pct_GR001888,address,2,"164 Avenue Hassan Ii, Casablanca || 91 Boulevard Anfa, Casablanca",survivorship_rule,"91 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR001889,first_name,3,Khadia || Khadija || Khaija,survivorship_rule,Khadia,True
+S3_30pct,S3_30pct_GR001893,first_name,2,Kadija || Khadija,survivorship_rule,Kadija,False
+S3_30pct,S3_30pct_GR001897,last_name,2,ZIANI || Ziani,survivorship_rule,ZIANI,False
+S3_30pct,S3_30pct_GR001900,first_name,3,Mia || Mina || Mna,survivorship_rule,Mia,True
+S3_30pct,S3_30pct_GR001925,address,2,"14 Avenue Hassan Ii, Casa || 14 Avenue Hassan Ii, Casablanca",survivorship_rule,"14 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR001927,first_name,2,Yasmie || Yasmine,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR001934,first_name,2,AYA || Aya,survivorship_rule,Aya,False
+S3_30pct,S3_30pct_GR001934,last_name,2,EL AMRANI || El Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR001944,first_name,2,Omar || Omr,survivorship_rule,Omr,False
+S3_30pct,S3_30pct_GR001946,first_name,2,SOUFIANE || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR001946,phone,2,0662168687 || 0691626071,survivorship_rule,0691626071,False
+S3_30pct,S3_30pct_GR001955,first_name,2,Nour || Nur,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR001961,last_name,2,El Amrani || El-Amrani,survivorship_rule,El Amrani,False
+S3_30pct,S3_30pct_GR001963,address,2,"131 Avenue Hassan Ii, Casablanca || 132 Avenue Mohammed V, Casablanca",survivorship_rule,"132 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR001965,first_name,2,Amie || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR001967,last_name,2,OUAZZANI || Ouazzani,survivorship_rule,Ouazzani,False
+S3_30pct,S3_30pct_GR001973,first_name,2,Sami || Smi,survivorship_rule,Smi,False
+S3_30pct,S3_30pct_GR001974,first_name,3,ILYAS || Ilyas || Iyas,survivorship_rule,Ilyas,True
+S3_30pct,S3_30pct_GR001974,last_name,2,El Khatib || El-Khatib,survivorship_rule,El Khatib,False
+S3_30pct,S3_30pct_GR001978,first_name,2,Hia || Hiba,survivorship_rule,Hiba,False
+S3_30pct,S3_30pct_GR001997,first_name,2,Soufiae || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR002010,first_name,2,ILYAS || Ilyas,survivorship_rule,ILYAS,False
+S3_30pct,S3_30pct_GR002011,address,2,"17 Avenue Hassan Ii, Casablanca || 30 Avenue Hassan Ii, Casablanca",survivorship_rule,"30 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR002012,first_name,2,Imane || Imne,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR002014,address,2,"11 Rue Al Massira, Casablanca || 120 Rue Oued Ziz, Casablanca",survivorship_rule,"11 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR002019,first_name,2,Khadia || Khadija,survivorship_rule,Khadia,False
+S3_30pct,S3_30pct_GR002024,address,2,"148 Rue Oued Ziz, Casablanca || 69 Rue Des Fleurs, Casa",survivorship_rule,"148 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR002032,first_name,2,Yasmine || Yasmne,survivorship_rule,Yasmine,False
+S3_30pct,S3_30pct_GR002038,first_name,2,Meryem || Merym,survivorship_rule,Meryem,False
+S3_30pct,S3_30pct_GR002040,address,2,"43 Avenue Hassan Ii, Casa || 43 Avenue Hassan Ii, Casablanca",survivorship_rule,"43 Avenue Hassan Ii, Casablanca",False
+S3_30pct,S3_30pct_GR002041,address,2,"129 Rue Al Qods, Casablanca || 58 Boulevard Anfa, Casablanca",survivorship_rule,"129 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR002043,address,2,"141 Avenue Mohammed V, Casablanca || 154 Rue Des Fleurs, Casablanca",survivorship_rule,"154 Rue Des Fleurs, Casablanca",False
+S3_30pct,S3_30pct_GR002044,first_name,2,Kadija || Khadija,survivorship_rule,Kadija,False
+S3_30pct,S3_30pct_GR002051,first_name,4,YASMINE || Yamine || Yasmine || Ysmine,survivorship_rule,Ysmine,True
+S3_30pct,S3_30pct_GR002070,first_name,2,IMANE || Imane,survivorship_rule,IMANE,False
+S3_30pct,S3_30pct_GR002072,address,2,"20 Rue Oued Ziz, Casa || 20 Rue Oued Ziz, Casablanca",survivorship_rule,"20 Rue Oued Ziz, Casablanca",False
+S3_30pct,S3_30pct_GR002074,last_name,2,BOUKILI || Boukili,survivorship_rule,BOUKILI,False
+S3_30pct,S3_30pct_GR002080,first_name,2,Lia || Lina,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR002084,first_name,2,Oar || Omar,survivorship_rule,Omar,False
+S3_30pct,S3_30pct_GR002087,first_name,2,Kadija || Khadija,survivorship_rule,Khadija,False
+S3_30pct,S3_30pct_GR002087,phone,2,0674335692 || 0676023757,survivorship_rule,0674335692,False
+S3_30pct,S3_30pct_GR002106,first_name,2,Imae || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR002108,first_name,2,Nada || Nadia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR002111,first_name,2,Ilyas || Ilys,survivorship_rule,Ilyas,False
+S3_30pct,S3_30pct_GR002111,address,2,"134 Boulevard Anfa, Casa || 134 Boulevard Anfa, Casablanca",survivorship_rule,"134 Boulevard Anfa, Casablanca",False
+S3_30pct,S3_30pct_GR002114,first_name,2,Meh || Mehdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR002129,first_name,2,ADAM || Adam,survivorship_rule,ADAM,False
+S3_30pct,S3_30pct_GR002129,last_name,2,El Amrani || El-Amrani,survivorship_rule,El-Amrani,False
+S3_30pct,S3_30pct_GR002133,address,2,"157 Avenue Mohammed V, Casablanca || 96 Rue Ibn Sina, Casablanca",survivorship_rule,"157 Avenue Mohammed V, Casablanca",False
+S3_30pct,S3_30pct_GR002137,last_name,2,ALAOUI || Alaoui,survivorship_rule,Alaoui,False
+S3_30pct,S3_30pct_GR002138,phone,2,0608861593 || 0744972503,survivorship_rule,0744972503,False
+S3_30pct,S3_30pct_GR002138,address,2,"118 Rue Oued Ziz, Casablanca || 70 Boulevard Zerktouni, Casablanca",survivorship_rule,"70 Boulevard Zerktouni, Casablanca",False
+S3_30pct,S3_30pct_GR002140,first_name,2,IMANE || Imane,survivorship_rule,IMANE,False
+S3_30pct,S3_30pct_GR002140,last_name,2,BENNANI || Bennani,survivorship_rule,BENNANI,False
+S3_30pct,S3_30pct_GR002141,first_name,2,YOUSSEF || Youssef,survivorship_rule,Youssef,False
+S3_30pct,S3_30pct_GR002141,last_name,2,MOULINE || Mouline,survivorship_rule,Mouline,False
+S3_30pct,S3_30pct_GR002148,first_name,2,Mehdi || Mhdi,survivorship_rule,Mehdi,False
+S3_30pct,S3_30pct_GR002153,address,2,"130 Rue Al Qods, Casa || 130 Rue Al Qods, Casablanca",survivorship_rule,"130 Rue Al Qods, Casablanca",False
+S3_30pct,S3_30pct_GR002159,address,2,"111 Rue Al Massira, Casablanca || 35 Boulevard Zerktouni, Casablanca",survivorship_rule,"111 Rue Al Massira, Casablanca",False
+S3_30pct,S3_30pct_GR002163,first_name,2,Ami || Amine,survivorship_rule,Amine,False
+S3_30pct,S3_30pct_GR002224,first_name,2,Nadia || Naia,survivorship_rule,Nadia,False
+S3_30pct,S3_30pct_GR002228,first_name,2,Sami || Smi,survivorship_rule,Sami,False
+S3_30pct,S3_30pct_GR002251,phone,2,0627443264 || 0734385952,survivorship_rule,0734385952,False
+S3_30pct,S3_30pct_GR002271,first_name,2,Lina || Lna,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR002278,first_name,2,In || Ines,survivorship_rule,Ines,False
+S3_30pct,S3_30pct_GR002299,last_name,2,SAIDI || Saidi,survivorship_rule,Saidi,False
+S3_30pct,S3_30pct_GR002302,first_name,2,Rachid || Rahid,survivorship_rule,Rahid,False
+S3_30pct,S3_30pct_GR002303,first_name,2,Nor || Nour,survivorship_rule,Nour,False
+S3_30pct,S3_30pct_GR002334,first_name,2,Saa || Sara,survivorship_rule,Sara,False
+S3_30pct,S3_30pct_GR002363,first_name,2,Ay || Aya,survivorship_rule,Aya,False
+S3_30pct,S3_30pct_GR002363,last_name,2,Slaoui || Sleoui,survivorship_rule,Slaoui,False
+S3_30pct,S3_30pct_GR002388,first_name,2,MAHA || Maha,survivorship_rule,MAHA,False
+S3_30pct,S3_30pct_GR002392,first_name,2,Meryem || Meyem,survivorship_rule,Meyem,False
+S3_30pct,S3_30pct_GR002429,first_name,2,LINA || Lina,survivorship_rule,Lina,False
+S3_30pct,S3_30pct_GR002437,first_name,2,Sara || Sra,survivorship_rule,Sara,False
+S3_30pct,S3_30pct_GR002442,first_name,2,MAHA || Maha,survivorship_rule,Maha,False
+S3_30pct,S3_30pct_GR002442,last_name,2,BENNANI || Bennani,survivorship_rule,Bennani,False
+S3_30pct,S3_30pct_GR002455,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR002470,first_name,2,Salma || Slma,survivorship_rule,Salma,False
+S3_30pct,S3_30pct_GR002505,first_name,2,Iane || Imane,survivorship_rule,Imane,False
+S3_30pct,S3_30pct_GR002511,first_name,2,Sofiane || Soufiane,survivorship_rule,Soufiane,False
+S3_30pct,S3_30pct_GR002525,first_name,2,ADAM || Adam,survivorship_rule,Adam,False
+S3_30pct,S3_30pct_GR002525,last_name,2,BENALI || Benali,survivorship_rule,Benali,False
+S3_30pct,S3_30pct_GR002535,first_name,2,Hama || Hamza,survivorship_rule,Hama,False
+S3_30pct,S3_30pct_GR002576,first_name,3,Yousef || Youssef || Youssf,survivorship_rule,Youssf,True
+S3_30pct,S3_30pct_GR002577,first_name,2,Yousef || Youssef,survivorship_rule,Yousef,False
+S3_30pct,S3_30pct_GR002581,first_name,2,Iane || Imane,survivorship_rule,Iane,False
+S3_30pct,S3_30pct_GR002585,first_name,2,Mi || Mina,survivorship_rule,Mina,False
+S3_30pct,S3_30pct_GR002695,first_name,2,Ran || Rania,survivorship_rule,Rania,False
+S3_30pct,S3_30pct_GR002701,last_name,2,EL FASSI || El Fassi,survivorship_rule,EL FASSI,False
+S3_30pct,S3_30pct_GR002708,first_name,2,Ham || Hamza,survivorship_rule,Hamza,False
+S3_30pct,S3_30pct_GR002863,first_name,2,Aam || Adam,survivorship_rule,Aam,False
+S3_30pct,S3_30pct_GR002882,first_name,2,GHITA || Ghita,survivorship_rule,Ghita,False
+S3_30pct,S3_30pct_GR002900,first_name,2,Bilal || Blal,survivorship_rule,Blal,False
+S3_30pct,S3_30pct_GR002948,first_name,2,Mia || Mina,survivorship_rule,Mia,False

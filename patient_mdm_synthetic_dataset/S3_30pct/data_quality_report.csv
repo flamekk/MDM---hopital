@@ -1,0 +1,6 @@
+scenario,source_system,identity_records,records_with_one_or_more_injected_anomalies,observed_record_anomaly_rate,missing_dob,missing_phone,duplicate_source_ids
+S3_30pct,ADMISSION_SYS,1722,563,0.3269,69,76,0
+S3_30pct,LAB_SYS,1399,555,0.3967,146,62,0
+S3_30pct,RADIOLOGY_SYS,969,381,0.3932,49,49,0
+S3_30pct,CONSULTATION_SYS,1507,509,0.3378,67,65,0
+S3_30pct,BILLING_SYS,1292,453,0.3506,61,53,0
