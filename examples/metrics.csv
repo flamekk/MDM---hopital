@@ -1,0 +1,13 @@
+﻿domain,method,stage,true_pairs_total,candidate_true_pairs,blocking_recall,automatic_tp,automatic_fp,automatic_precision,automatic_global_recall,review_cases,cluster_true_links,cluster_false_links,cluster_precision,cluster_global_recall,scope
+patient,exact,automatic_baseline,110,110,1.0,77,0,1.0,0.7,33,77,0,1.0,0.7,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+patient,weighted,automatic_baseline,110,110,1.0,86,0,1.0,0.7818181818181819,24,86,0,1.0,0.7818181818181819,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+patient,probabilistic,automatic_baseline,110,110,1.0,86,0,1.0,0.7818181818181819,23,86,0,1.0,0.7818181818181819,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+patient,weighted,current_version,110,110,1.0,86,0,1.0,0.7818181818181819,24,86,0,1.0,0.7818181818181819,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+personnel,exact,automatic_baseline,120,120,1.0,87,0,1.0,0.725,26,87,0,1.0,0.725,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+personnel,weighted,automatic_baseline,120,120,1.0,98,0,1.0,0.8166666666666667,15,98,0,1.0,0.8166666666666667,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+personnel,probabilistic,automatic_baseline,120,120,1.0,98,0,1.0,0.8166666666666667,13,98,0,1.0,0.8166666666666667,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+personnel,weighted,current_version,120,120,1.0,98,0,1.0,0.8166666666666667,15,98,0,1.0,0.8166666666666667,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+produit,exact,automatic_baseline,328,328,1.0,278,0,1.0,0.8475609756097561,160,278,0,1.0,0.8475609756097561,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+produit,weighted,automatic_baseline,328,328,1.0,281,0,1.0,0.8567073170731707,157,281,0,1.0,0.8567073170731707,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+produit,probabilistic,automatic_baseline,328,328,1.0,281,0,1.0,0.8567073170731707,157,281,0,1.0,0.8567073170731707,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"
+produit,weighted,current_version,328,328,1.0,281,0,1.0,0.8567073170731707,157,281,0,1.0,0.8567073170731707,"jeu synthétique complet, descriptif ; aucun réglage sur ces étiquettes"

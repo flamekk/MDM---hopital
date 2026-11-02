@@ -30,3 +30,9 @@ Thumbs.db
 *.db
 *.sqlite
 *.sqlite3
+
+# Versions et jeux de travail générés
+workspace/
+workspace_*/
+dist/
+tmp/
