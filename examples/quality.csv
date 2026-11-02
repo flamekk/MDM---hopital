@@ -1,0 +1,4 @@
+﻿domain,records,raw_completeness,valid_required_completeness,validity,invalid_cells,required_cells,note
+patient,127,1.0,0.9868766404199475,0.9790209790209791,21,381,Complétude requise et validité syntaxique ; aucune preuve d'exactitude clinique.
+personnel,132,1.0,1.0,0.9824175824175824,16,396,Complétude requise et validité syntaxique ; aucune preuve d'exactitude clinique.
+produit,200,1.0,1.0,1.0,0,800,Complétude requise et validité syntaxique ; aucune preuve d'exactitude clinique.

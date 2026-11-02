@@ -1,294 +1,241 @@
 from pathlib import Path
-from datetime import datetime, timezone
-import hashlib
+import os
 import json
 import pandas as pd
+import altair as alt
 import streamlit as st
-from reconciliation import build_reconciliation, save_reconciliation
+from mdm.config import DOMAINS, RULE_VERSION
+from mdm.demo import generate
+from mdm.pipeline import run
+from mdm.io import csv_download
+from mdm import store
 
-st.set_page_config(page_title="Patient MDM — Human Review", page_icon="🩺", layout="wide")
-
-APP_DIR = Path(__file__).resolve().parent
-DATA_DIR = APP_DIR / "patient_mdm_synthetic_dataset"
-SCENARIOS = ["S1_5pct", "S2_15pct", "S3_30pct"]
-
-def load_csv(path, **kwargs):
-    if not path.exists():
-        return pd.DataFrame()
-    try:
-        return pd.read_csv(path, **kwargs)
-    except pd.errors.EmptyDataError:
-        return pd.DataFrame()
-
-def save_csv(df, path):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(path, index=False, encoding="utf-8")
-
-def stable_hash(row):
-    payload = json.dumps({str(k): (None if pd.isna(v) else str(v)) for k, v in row.items()},
-                         sort_keys=True, ensure_ascii=False)
-    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
-
-def append_audit(scenario, case_id, action, old_status, new_status, reviewer, decision, comment, before_hash, after_hash):
-    path = DATA_DIR / "mdm_audit_log.csv"
-    log = load_csv(path)
-    if log.empty and not len(log.columns):
-        log = pd.DataFrame(columns=[
-            "audit_event_id", "timestamp_utc", "scenario", "case_id", "action",
-            "previous_status", "new_status", "reviewer_id", "decision", "comment",
-            "before_hash", "after_hash"
-        ])
-    event_id = f"AUD-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')}"
-    entry = {
-        "audit_event_id": event_id,
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "scenario": scenario, "case_id": case_id, "action": action,
-        "previous_status": old_status, "new_status": new_status,
-        "reviewer_id": reviewer, "decision": decision, "comment": comment,
-        "before_hash": before_hash, "after_hash": after_hash
-    }
-    log = pd.concat([log, pd.DataFrame([entry])], ignore_index=True)
-    save_csv(log, path)
-
-def read_scenario_golden(scenario):
-    return load_csv(DATA_DIR / scenario / "golden_record" / "golden_records.csv")
-
-st.title("🩺 Patient Master Data Management")
-st.caption("Prototype local de revue humaine, exploration des Golden Records et traçabilité des décisions.")
-if not DATA_DIR.exists():
-    st.error(f"Dossier de données introuvable : {DATA_DIR}. Placez le dossier patient_mdm_synthetic_dataset à côté de app.py.")
-    st.stop()
+st.set_page_config(page_title="Hospital MDM | Gouvernance", page_icon="🏥", layout="wide")
+ROOT = Path(__file__).resolve().parent
+WORK = Path(os.environ.get('MDM_WORKSPACE', ROOT / 'workspace'))
+st.markdown("""<style>
+.stApp {background:#f6f8fb} [data-testid="stSidebar"] {background:#102b3a}
+[data-testid="stSidebar"] * {color:#f1f6fa}
+[data-testid="stSidebar"] input {color:#102b3a}
+h1,h2,h3 {color:#123b4a;letter-spacing:-.025em}
+[data-testid="stMetric"] {background:white;border:1px solid #dce6ec;border-radius:12px;padding:18px}
+.hero {background:#123b4a;color:white;border-radius:16px;padding:28px 32px;margin-bottom:24px}
+.hero h1 {color:white;margin:8px 0;font-size:2.2rem}.hero p {color:#c5e0e5;margin:0}
+.eyebrow {font-size:12px;letter-spacing:.17em;color:#6fe0cb}
+</style>""", unsafe_allow_html=True)
 
 with st.sidebar:
-    st.header("Paramètres")
-    scenario = st.selectbox("Scénario actif", SCENARIOS, index=0)
-    reviewer = st.text_input("Identifiant du réviseur", placeholder="ex. HZBARI")
-    st.info("Les décisions sont enregistrées dans les CSV locaux. Elles ne fusionnent pas automatiquement les Golden Records.")
-
-summary = load_csv(DATA_DIR / "golden_record_summary.csv")
-matching = load_csv(DATA_DIR / "matching_baseline_summary.csv")
-review_queue = load_csv(DATA_DIR / "human_review_queue.csv")
-conflict_queue = load_csv(DATA_DIR / "attribute_conflict_review_queue.csv")
-audit_log = load_csv(DATA_DIR / "mdm_audit_log.csv")
-
-tab_overview, tab_golden, tab_pairs, tab_conflicts, tab_audit, tab_reconciliation = st.tabs([
-    "📊 Vue d'ensemble", "🗂️ Golden Records", "🔎 Revue des paires",
-    "⚠️ Conflits d'attributs", "📜 Journal d'audit", "🔁 Réconciliation"
-])
-
-with tab_overview:
-    st.subheader("Indicateurs clés")
-    srow = summary[summary["scenario"] == scenario] if not summary.empty else pd.DataFrame()
-    mrow = matching[matching["scenario"] == scenario] if not matching.empty else pd.DataFrame()
-    rrow = review_queue[review_queue["scenario"] == scenario] if not review_queue.empty else pd.DataFrame()
-    crow = conflict_queue[conflict_queue["scenario"] == scenario] if not conflict_queue.empty else pd.DataFrame()
-    cols = st.columns(4)
-    def first_value(frame, col, default=0):
-        return frame.iloc[0][col] if not frame.empty and col in frame.columns else default
-    cols[0].metric("Identités sources", f"{int(first_value(srow, 'input_identity_records')):,}")
-    cols[1].metric("Golden Records", f"{int(first_value(srow, 'golden_records')):,}")
-    cols[2].metric("Paires à examiner", f"{int((rrow['current_status'] == 'PENDING').sum()) if not rrow.empty else 0:,}")
-    cols[3].metric("Conflits en attente", f"{int((crow['current_status'] == 'PENDING').sum()) if not crow.empty else 0:,}")
-    st.markdown("### Comparaison des scénarios")
-    if not summary.empty:
-        show = summary.copy()
-        if not matching.empty:
-            show = show.merge(matching[["scenario", "candidate_pairs", "match_auto", "review", "non_match"]],
-                              on="scenario", how="left")
-        st.dataframe(show, use_container_width=True, hide_index=True)
-    else:
-        st.warning("Résumé non trouvé.")
-    st.markdown("### Répartition des décisions de matching")
-    if not matching.empty:
-        chart = matching.set_index("scenario")[["match_auto", "review", "non_match"]]
-        st.bar_chart(chart)
-    st.caption("Les métriques sont calculées sur le jeu synthétique. Les fichiers de vérité terrain sont réservés à l'évaluation et ne sont pas utilisés par cette interface pour prendre des décisions.")
-
-with tab_golden:
-    st.subheader(f"Explorateur des Golden Records — {scenario}")
-    golden = read_scenario_golden(scenario)
-    membership = load_csv(DATA_DIR / scenario / "golden_record" / "cluster_membership.csv")
-    if golden.empty:
-        st.warning("Fichier golden_records.csv absent ou vide.")
-    else:
-        q = st.text_input("Recherche (ID, nom, téléphone, adresse)", key="golden_search")
-        min_sources = st.selectbox("Nombre minimum de systèmes sources", [1, 2, 3, 4, 5], index=0)
-        filtered = golden.copy()
-        if "source_count" in filtered:
-            filtered = filtered[pd.to_numeric(filtered["source_count"], errors="coerce").fillna(0) >= min_sources]
-        if q.strip():
-            mask = filtered.astype(str).apply(lambda col: col.str.contains(q.strip(), case=False, na=False)).any(axis=1)
-            filtered = filtered[mask]
-        st.write(f"{len(filtered):,} résultat(s)")
-        st.dataframe(filtered.head(1000), use_container_width=True, hide_index=True)
-        if len(filtered) > 1000:
-            st.caption("Affichage limité aux 1 000 premières lignes. Affinez la recherche pour retrouver un enregistrement.")
-        if not filtered.empty and not membership.empty:
-            chosen = st.selectbox("Afficher les membres du Golden Record", filtered["golden_record_id"].astype(str).tolist())
-            members = membership[membership["golden_record_id"].astype(str) == chosen]
-            st.markdown(f"**Membres de {chosen}**")
-            st.dataframe(members, use_container_width=True, hide_index=True)
-        st.download_button("Télécharger la sélection CSV", filtered.to_csv(index=False).encode("utf-8-sig"),
-                           file_name=f"golden_records_{scenario}.csv", mime="text/csv")
-
-with tab_pairs:
-    st.subheader("Revue humaine des paires candidates")
-    if review_queue.empty:
-        st.warning("human_review_queue.csv introuvable ou vide.")
-    else:
-        scoped = review_queue[review_queue["scenario"] == scenario].copy()
-        statuses = sorted(scoped["current_status"].fillna("PENDING").astype(str).unique().tolist())
-        status_filter = st.multiselect("Filtrer par statut", statuses, default=["PENDING"] if "PENDING" in statuses else statuses)
-        visible = scoped[scoped["current_status"].fillna("PENDING").astype(str).isin(status_filter)]
-        st.write(f"{len(visible):,} cas affiché(s) sur {len(scoped):,}")
-        cols = ["case_id", "source_system_a", "source_patient_id_a", "source_system_b", "source_patient_id_b",
-                "score", "reason", "dob_exact", "phone_exact", "address_exact", "current_status", "reviewer_decision"]
-        st.dataframe(visible[[c for c in cols if c in visible.columns]].head(500), use_container_width=True, hide_index=True)
-        if len(visible) > 500:
-            st.caption("Liste limitée à 500 lignes pour garder l'interface réactive. Utilisez le filtre ou l'ID de cas.")
-        case_ids = visible["case_id"].astype(str).tolist()
-        if case_ids:
-            selected_case = st.selectbox("Cas à traiter", case_ids)
-            record = review_queue[review_queue["case_id"].astype(str) == selected_case].iloc[0]
-            with st.expander("Détails de la paire", expanded=True):
-                st.json(record.where(pd.notna(record), None).to_dict())
-            with st.form("pair_review_form"):
-                decision = st.selectbox("Décision", ["CONFIRM_MATCH", "REJECT_MATCH", "ESCALATE"])
-                comment = st.text_area("Commentaire / justification", max_chars=1000)
-                submit = st.form_submit_button("Enregistrer la décision")
-            if submit:
-                if not reviewer.strip():
-                    st.error("Saisissez votre identifiant de réviseur dans la barre latérale.")
-                else:
-                    idx = review_queue.index[review_queue["case_id"].astype(str) == selected_case][0]
-                    old = review_queue.loc[idx].to_dict()
-                    old_status = str(old.get("current_status", "PENDING"))
-                    before = stable_hash(old)
-                    new_status = {"CONFIRM_MATCH": "REVIEWED_MATCH", "REJECT_MATCH": "REVIEWED_NON_MATCH", "ESCALATE": "ESCALATED"}[decision]
-                    review_queue.loc[idx, "current_status"] = new_status
-                    review_queue.loc[idx, "reviewer_decision"] = decision
-                    review_queue.loc[idx, "reviewer_id"] = reviewer.strip()
-                    review_queue.loc[idx, "reviewed_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-                    review_queue.loc[idx, "review_comment"] = comment.strip()
-                    after = stable_hash(review_queue.loc[idx].to_dict())
-                    save_csv(review_queue, DATA_DIR / "human_review_queue.csv")
-                    append_audit(scenario, selected_case, "PAIR_REVIEW", old_status, new_status,
-                                 reviewer.strip(), decision, comment.strip(), before, after)
-                    st.success("Décision enregistrée et ajoutée au journal d'audit.")
-                    st.rerun()
-
-with tab_conflicts:
-    st.subheader("Revue des conflits d'attributs")
-    if conflict_queue.empty:
-        st.warning("attribute_conflict_review_queue.csv introuvable ou vide.")
-    else:
-        scoped = conflict_queue[conflict_queue["scenario"] == scenario].copy()
-        status_vals = sorted(scoped["current_status"].fillna("PENDING").astype(str).unique().tolist())
-        status_filter = st.multiselect("Statuts à afficher", status_vals, default=status_vals, key="conflict_status")
-        visible = scoped[scoped["current_status"].fillna("PENDING").astype(str).isin(status_filter)]
-        st.dataframe(visible.head(500), use_container_width=True, hide_index=True)
-        if len(visible) > 500:
-            st.caption("Liste limitée à 500 lignes.")
-        case_ids = visible["case_id"].astype(str).tolist()
-        if case_ids:
-            selected_case = st.selectbox("Conflit à traiter", case_ids, key="conflict_case")
-            record = conflict_queue[conflict_queue["case_id"].astype(str) == selected_case].iloc[0]
-            st.write(f"**Golden Record :** {record.get('golden_record_id', '')}  |  **Attribut :** {record.get('attribute', '')}")
-            st.write(f"**Valeurs observées :** {record.get('values', '')}")
-            selected_value = st.selectbox("Valeur retenue (si applicable)", [""] + [v.strip() for v in str(record.get("values", "")).split("||") if v.strip()])
-            with st.form("conflict_review_form"):
-                decision = st.selectbox("Décision", ["ACCEPT_SELECTED_VALUE", "SELECT_ALTERNATIVE_VALUE", "ESCALATE"])
-                comment = st.text_area("Commentaire / justification", max_chars=1000, key="conflict_comment")
-                submit = st.form_submit_button("Enregistrer le traitement")
-            if submit:
-                if not reviewer.strip():
-                    st.error("Saisissez votre identifiant de réviseur dans la barre latérale.")
-                elif decision == "SELECT_ALTERNATIVE_VALUE" and not selected_value:
-                    st.error("Choisissez la valeur retenue avant de valider.")
-                else:
-                    idx = conflict_queue.index[conflict_queue["case_id"].astype(str) == selected_case][0]
-                    old = conflict_queue.loc[idx].to_dict()
-                    old_status = str(old.get("current_status", "PENDING"))
-                    before = stable_hash(old)
-                    new_status = {"ACCEPT_SELECTED_VALUE": "RESOLVED_ACCEPTED", "SELECT_ALTERNATIVE_VALUE": "RESOLVED_ALTERNATIVE", "ESCALATE": "ESCALATED"}[decision]
-                    conflict_queue.loc[idx, "current_status"] = new_status
-                    conflict_queue.loc[idx, "reviewer_decision"] = decision
-                    conflict_queue.loc[idx, "reviewer_id"] = reviewer.strip()
-                    conflict_queue.loc[idx, "reviewed_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-                    conflict_queue.loc[idx, "review_comment"] = comment.strip()
-                    if selected_value:
-                        conflict_queue.loc[idx, "selected_value"] = selected_value
-                    after = stable_hash(conflict_queue.loc[idx].to_dict())
-                    save_csv(conflict_queue, DATA_DIR / "attribute_conflict_review_queue.csv")
-                    append_audit(scenario, selected_case, "ATTRIBUTE_CONFLICT_REVIEW", old_status, new_status,
-                                 reviewer.strip(), decision, comment.strip(), before, after)
-                    st.success("Traitement enregistré et ajouté au journal d'audit.")
-                    st.rerun()
-
-with tab_audit:
-    st.subheader("Journal d'audit")
-    current_log = load_csv(DATA_DIR / "mdm_audit_log.csv")
-    if current_log.empty:
-        st.info("Aucune décision humaine enregistrée pour le moment.")
-    else:
-        filt = current_log[current_log["scenario"] == scenario] if "scenario" in current_log.columns else current_log
-        st.metric("Événements d'audit (tous scénarios)", len(current_log))
-        st.dataframe(filt.sort_values("timestamp_utc", ascending=False), use_container_width=True, hide_index=True)
-        st.download_button("Télécharger le journal complet", current_log.to_csv(index=False).encode("utf-8-sig"),
-                           file_name="mdm_audit_log.csv", mime="text/csv")
-    st.warning("Le journal est append-only via l'interface, mais les CSV restent modifiables manuellement. Pour un environnement de production, utiliser une base de données, des permissions et des contrôles d'intégrité.")
-
-
-with tab_reconciliation:
-    st.subheader("Réconciliation contrôlée des Golden Records")
-    st.warning("Seules les décisions humaines CONFIRM_MATCH et REVIEWED_MATCH sont candidates. REJECT_MATCH et ESCALATE ne déclenchent aucune fusion. Les Golden Records de référence ne sont jamais écrasés.")
-    st.markdown("""
-    **Contrôles appliqués avant chaque fusion :**
-    - les deux identités doivent exister dans la membership de référence ;
-    - un cluster ne peut pas contenir deux identités du même système source ;
-    - les dates de naissance non vides doivent être compatibles ;
-    - les paires déjà dans le même cluster ne provoquent pas de fusion supplémentaire.
-    """)
-    try:
-        proposal = build_reconciliation(DATA_DIR, scenario)
-        c1, c2, c3, c4 = st.columns(4)
-        c1.metric("Golden Records de référence", f"{proposal['baseline_golden_count']:,}")
-        c2.metric("Golden Records proposés", f"{proposal['reconciled_golden_count']:,}")
-        c3.metric("Décisions humaines confirmées", f"{proposal['confirmed_decisions_count']:,}")
-        merged_count = int((proposal["accepted_decisions"].get("result", pd.Series(dtype=str)) == "MERGED").sum())
-        c4.metric("Fusions proposées", f"{merged_count:,}")
-        st.markdown("### Aperçu des décisions")
-        if not proposal["accepted_decisions"].empty:
-            st.write("Décisions acceptées / déjà reliées")
-            st.dataframe(proposal["accepted_decisions"], use_container_width=True, hide_index=True)
-        if not proposal["rejected_decisions"].empty:
-            st.write("Fusions refusées par les contrôles")
-            st.dataframe(proposal["rejected_decisions"], use_container_width=True, hide_index=True)
-        st.info("La v1 conserve les attributs du Golden Record de référence le plus complet parmi les clusters réunis. Les décisions de conflits d'attributs ne sont pas encore appliquées aux valeurs métier.")
-        if st.button("Créer la version de réconciliation v1", type="primary"):
-            out_dir = save_reconciliation(proposal)
-            append_audit(scenario, f"{scenario}_RECONCILIATION_V1", "RECONCILIATION_RUN",
-                         "BASELINE", "RECONCILIATION_V1", reviewer.strip() or "UNSPECIFIED",
-                         "CREATE_VERSION", "Version réconciliée créée; baseline conservée.",
-                         stable_hash({"baseline_golden_count": proposal["baseline_golden_count"]}),
-                         stable_hash({"reconciled_golden_count": proposal["reconciled_golden_count"],
-                                      "merged": merged_count}))
-            st.success(f"Version enregistrée : {out_dir.relative_to(DATA_DIR)}")
+    st.title("🏥 Hospital MDM")
+    st.caption("QUALITÉ · IDENTITÉ · GOUVERNANCE")
+    page = st.radio("Navigation", ['Pilotage', 'Sources & qualité', 'Référentiels', 'Revue humaine', 'Matching & évaluation', 'Catalogue & modèle', 'Historique & API', 'Parcours scolaire'])
+    st.divider()
+    runs = store.list_runs(WORK)
+    if not runs:
+        st.info("Initialisez les trois domaines pour commencer.")
+        if st.button('Initialiser la démonstration', type='primary'):
+            try:
+                if not (WORK / 'sources').exists():
+                    generate(WORK)
+                run(WORK)
+                st.rerun()
+            except (ValueError, OSError) as exc:
+                st.error(str(exc))
+        st.stop()
+    selected = st.selectbox('Version consultée', [r['run_id'] for r in runs], format_func=lambda v: next(r['created_at'][:19].replace('T', ' ') + ' UTC · ' + v[:8] for r in runs if r['run_id'] == v))
+    method = st.selectbox('Méthode de la prochaine exécution', ['weighted', 'exact', 'probabilistic'])
+    inherit = st.checkbox('Reprendre les décisions de cette version', value=True)
+    if st.button('Exécuter le pipeline', type='primary'):
+        try:
+            with st.spinner('Normalisation, matching et création du référentiel…'):
+                run(WORK, method, selected if inherit else None)
             st.rerun()
-        version_dirs = sorted(
-            [p for p in (DATA_DIR / scenario).glob("reconciliation_v*") if p.is_dir()],
-            key=lambda p: int(p.name.removeprefix("reconciliation_v")) if p.name.removeprefix("reconciliation_v").isdigit() else 0
-        )
-        if version_dirs:
-            st.success(f"{len(version_dirs)} version(s) de réconciliation déjà créée(s) pour ce scénario.")
-            chosen_version = st.selectbox("Consulter une version existante", version_dirs, format_func=lambda p: p.name)
-            summary_df = load_csv(chosen_version / "reconciliation_summary.csv")
-            st.dataframe(summary_df, use_container_width=True, hide_index=True)
-            st.download_button("Télécharger le résumé de réconciliation",
-                               summary_df.to_csv(index=False).encode("utf-8-sig"),
-                               file_name=f"reconciliation_summary_{scenario}_{chosen_version.name}.csv", mime="text/csv")
-    except Exception as exc:
-        st.error(f"Impossible de préparer la réconciliation : {exc}")
+        except (ValueError, OSError) as exc:
+            st.error(str(exc))
+    st.caption(f'Règles {RULE_VERSION} · Démonstration locale')
+
+try:
+    data = store.load_run(WORK, selected)
+except ValueError as exc:
+    st.error(str(exc))
+    st.stop()
+
+st.markdown('<div class="hero"><span class="eyebrow">PLATEFORME DE DONNÉES HOSPITALIÈRES</span><h1>Des sources multiples. Une identité maîtrisée.</h1><p>Patients, personnel et produits : comprendre, rapprocher et tracer chaque décision.</p></div>', unsafe_allow_html=True)
+st.caption(f"Version {selected[:8]} · {data['created_at'][:19]} UTC · Méthode {data['method']} · Sources synthétiques")
+
+
+def table(rows, height=None):
+    if not rows:
+        st.info('Aucun enregistrement dans cette sélection.')
+        return
+    kwargs = dict(width='stretch', hide_index=True)
+    if height:
+        kwargs['height'] = height
+    frame = pd.DataFrame(rows)
+    for col in frame.columns:
+        if frame[col].map(lambda x: isinstance(x, (dict, list))).any():
+            frame[col] = frame[col].map(lambda x: json.dumps(x, ensure_ascii=False) if isinstance(x, (list, dict)) else x)
+    st.dataframe(frame, **kwargs)
+
+
+def domain_picker(key):
+    present = [d for d in DOMAINS if data['standardized'][d]]
+    return st.selectbox('Domaine', present, format_func=lambda d: DOMAINS[d]['label'], key=key)
+
+
+def percent(value):
+    return '—' if value is None else f'{value:.1%}'
+
+
+if page == 'Pilotage':
+    st.subheader('Le référentiel en un regard')
+    pending = [p for p in data['pairs'] if p['decision'] == 'REVIEW' and not p['review_decision']]
+    c = st.columns(4)
+    c[0].metric('Identités sources', len(data['xrefs']))
+    c[1].metric('Fiches maîtres', len(data['masters']))
+    c[2].metric('Paires à examiner dans cette version', len(pending))
+    c[3].metric('Anomalies détectées', len(data['issues']))
+    left, right = st.columns([1.3, 1])
+    with left:
+        st.markdown('### Couverture des trois domaines')
+        counts = [{'Domaine': spec['label'], 'Sources': len(data['standardized'][d]), 'Maîtres': sum(r['domain'] == d for r in data['masters'])} for d, spec in DOMAINS.items()]
+        chart_data = pd.DataFrame(counts).melt(id_vars='Domaine', var_name='Type', value_name='Nombre')
+        chart = alt.Chart(chart_data).mark_bar(cornerRadiusEnd=3).encode(
+            y=alt.Y('Domaine:N', sort=None, title=None), x=alt.X('Nombre:Q', scale=alt.Scale(domainMin=0)),
+            color=alt.Color('Type:N', scale=alt.Scale(range=['#087f8c', '#95c9d0'])),
+            yOffset='Type:N', tooltip=['Domaine', 'Type', 'Nombre']).properties(height=250)
+        st.altair_chart(chart, width='stretch')
+    with right:
+        st.markdown('### Circuit de gouvernance')
+        st.markdown('1. **Importer** les sources et conserver leur empreinte.\n2. **Contrôler** les données et isoler les anomalies.\n3. **Rapprocher** les identités avec des preuves explicites.\n4. **Valider** les cas ambigus avec un Data Steward.\n5. **Publier une version** avec provenance et historique.')
+        (st.success if store.verify(WORK) else st.error)('Intégrité locale du journal vérifiée.' if store.verify(WORK) else 'Intégrité invalide : consulter le journal.')
+    st.info("Les identités restent séparées en présence de contradictions critiques. Les allergies, affectations et stocks sont rattachés par correspondance, hors des critères de matching.")
+
+elif page == 'Sources & qualité':
+    domain = domain_picker('source_domain')
+    q = next(q for q in data['quality'] if q['domain'] == domain)
+    c = st.columns(3)
+    c[0].metric('Complétude brute des champs requis', percent(q['raw_completeness']))
+    c[1].metric('Complétude valide après contrôle', percent(q['valid_required_completeness']))
+    c[2].metric('Validité syntaxique des valeurs fournies', percent(q['validity']))
+    st.caption(q['note'])
+    a, b, ctab = st.tabs(['Données brutes', 'Données normalisées', 'Anomalies et remédiation'])
+    with a:
+        table(data['raw'][domain], 360)
+    with b:
+        table(data['standardized'][domain], 360)
+        st.download_button('Exporter les données normalisées', csv_download(data['standardized'][domain]), f'{domain}_standardized.csv')
+    with ctab:
+        issues = [r for r in data['issues'] if r['domain'] == domain]
+        table(issues)
+        st.caption('Une date impossible ou un contact invalide devient une valeur vide. Corriger la source, puis créer une nouvelle exécution ; la valeur brute reste conservée.')
+
+elif page == 'Référentiels':
+    domain = domain_picker('master_domain')
+    query = st.text_input('Rechercher un nom, une référence ou un identifiant')
+    rows = [r for r in data['masters'] if r['domain'] == domain and query.casefold() in json.dumps(r, ensure_ascii=False).casefold()]
+    table(rows, 330)
+    st.download_button('Exporter la sélection', csv_download(rows), f'{domain}_masters.csv')
+    if rows:
+        chosen = st.selectbox('Fiche à examiner', [r['master_id'] for r in rows])
+        a, b, c = st.tabs(['Identités sources', 'Provenance des attributs', 'Tables rattachées'])
+        with a:
+            table([r for r in data['xrefs'] if r['master_id'] == chosen])
+        with b:
+            table([r for r in data['provenance'] if r['master_id'] == chosen])
+        with c:
+            related = [dict(r, table=name) for name, records in data['related'].items() for r in records if r['master_id'] == chosen]
+            table(related)
+            st.caption('Une allergie déclarée « a_valider » reste non validée après le rapprochement des identités.')
+
+elif page == 'Revue humaine':
+    if 'review_notice' in st.session_state:
+        st.success(st.session_state.pop('review_notice'))
+    domain = domain_picker('review_domain')
+    latest_decisions = store.decisions(WORK, selected)
+    status = st.selectbox('Afficher', ['À examiner', 'Contradictions critiques', 'Toutes les paires'])
+    scoped = [p for p in data['pairs'] if p['domain'] == domain]
+    if status == 'À examiner':
+        scoped = [p for p in scoped if (p['decision'] == 'REVIEW' or p['cluster_result'].startswith('BLOCKED')) and p['case_id'] not in latest_decisions and not p['review_decision']]
+    elif status == 'Contradictions critiques':
+        scoped = [p for p in scoped if p['critical_conflicts']]
+    st.write(f'{len(scoped)} paire(s)')
+    table([{k: p[k] for k in ['case_id', 'source_a', 'local_id_a', 'source_b', 'local_id_b', 'score', 'decision', 'reason', 'cluster_result']} for p in scoped[:300]])
+    if scoped:
+        case_id = st.selectbox('Cas à traiter', [p['case_id'] for p in scoped])
+        pair = next(p for p in scoped if p['case_id'] == case_id)
+        records = {r['rid']: r for r in data['standardized'][domain]}
+        a, b = st.columns(2)
+        with a:
+            st.markdown('**Identité A**')
+            st.json(records[pair['a']])
+        with b:
+            st.markdown('**Identité B**')
+            st.json(records[pair['b']])
+        with st.expander('Comprendre le score'):
+            st.json(dict(similarities=pair['features'], observed_weight=pair['coverage'], reason=pair['reason']))
+        if pair['critical_conflicts']:
+            st.warning('Confirmation bloquée : corriger les contradictions dans les sources avant un nouveau traitement.')
+        with st.form('human_review'):
+            reviewer = st.text_input('Identifiant du Data Steward')
+            options = ['REJECT', 'ESCALATE'] if pair['critical_conflicts'] else ['CONFIRM', 'REJECT', 'ESCALATE']
+            decision = st.selectbox('Décision', options)
+            comment = st.text_area('Justification obligatoire')
+            submitted = st.form_submit_button('Enregistrer la décision')
+        if submitted:
+            try:
+                store.review(WORK, selected, case_id, decision, reviewer, comment)
+                st.session_state['review_notice'] = 'Décision enregistrée. Exécutez le pipeline en reprenant cette version pour appliquer la décision.'
+                st.rerun()
+            except ValueError as exc:
+                st.error(str(exc))
+    st.markdown('### Décisions enregistrées depuis cette version')
+    table(list(latest_decisions.values()))
+    st.caption('La version consultée reste un snapshot immuable. La décision prend effet dans la prochaine version, après contrôle de cohérence du groupe entier.')
+
+elif page == 'Matching & évaluation':
+    st.subheader('Comparer les méthodes sur une même population')
+    baseline = [r for r in data['metrics'] if r['stage'] == 'automatic_baseline']
+    table(baseline)
+    if baseline:
+        frame = pd.DataFrame(baseline)
+        frame['Méthode'] = frame['domain'] + ' / ' + frame['method']
+        st.bar_chart(frame.set_index('Méthode')[['automatic_precision', 'automatic_global_recall', 'blocking_recall']])
+    else:
+        st.info("Pas de vérité terrain fournie : aucun chiffre de précision ou de rappel n'est inventé.")
+    st.markdown('**Précision** : part des rapprochements automatiques corrects. **Rappel global** : part de toutes les vraies paires retrouvées, y compris celles perdues au blocking. **Liens faux de cluster** : erreurs après fermeture transitive.')
+    st.warning("Le score probabiliste utilise des paramètres illustratifs et une hypothèse d'indépendance. Il ne constitue pas une probabilité calibrée. Les résultats sont descriptifs sur un jeu synthétique ; aucun jeu de test indépendant n'est revendiqué.")
+    st.markdown('### Résultat de la version courante, après décisions reprises')
+    table([r for r in data['metrics'] if r['stage'] == 'current_version'])
+    st.download_button('Exporter les mesures', csv_download(data['metrics']), 'evaluation.csv')
+
+elif page == 'Catalogue & modèle':
+    st.subheader('Catalogue des sources réellement chargées')
+    table(data['catalogue'])
+    st.download_button('Exporter le catalogue', csv_download(data['catalogue']), 'catalogue.csv')
+    st.markdown('### Modèle et responsabilités')
+    st.graphviz_chart('digraph { rankdir=LR; Sources -> Brut -> Normalisation -> Matching; Matching -> Revue; Matching -> Masters; Revue -> Masters; Masters -> XREF; Masters -> Provenance; Masters -> Relations; }')
+    st.markdown('**Data Owner** : définit le sens des attributs et approuve les règles. **Data Steward** : contrôle les cas et justifie les décisions. **Équipe technique** : maintient les imports, les versions et les sauvegardes.')
+    st.caption('Le prototype actif utilise SQLite. Le schéma PostgreSQL et son export SQL sont fournis pour l’étape de migration décrite dans le guide.')
+    for label, filename in [('Dictionnaire des données', 'dictionnaire.md'), ('Architecture et décisions', 'architecture.md')]:
+        with st.expander(label):
+            st.markdown((ROOT / 'docs' / filename).read_text(encoding='utf-8'))
+
+elif page == 'Historique & API':
+    st.subheader('Versions et audit')
+    table(runs)
+    valid = store.verify(WORK)
+    (st.success if valid else st.error)('Empreintes et chaîne d’audit valides.' if valid else 'Altération détectée.')
+    st.caption('Cette chaîne détecte des modifications accidentelles ou partielles. Un administrateur local peut réécrire la base et toute la chaîne ; ce mécanisme ne fournit pas de signature externe.')
+    table(store.audit_log(WORK), 330)
+    st.markdown('### Lignage de la version')
+    table(data['lineage'])
+    st.markdown('### API locale de consultation')
+    st.code('.\\.venv\\Scripts\\python.exe -m mdm api --port 8080\n# GET http://127.0.0.1:8080/api/runs\n# GET http://127.0.0.1:8080/api/runs/<run_id>/masters', language='powershell')
+    st.caption('Pour revenir à une ancienne version, sélectionnez-la dans la barre latérale. Aucun ancien snapshot n’est écrasé.')
+
+else:
+    st.subheader('Votre parcours, étape par étape')
+    st.markdown((ROOT / 'docs' / 'guide_etape_par_etape.md').read_text(encoding='utf-8'))
 
 st.divider()
-st.caption("Prototype pédagogique — ne pas utiliser pour des décisions médicales ou sur des données patients réelles.")
+st.caption('Projet scolaire · Données entièrement synthétiques · Validation des règles et du périmètre à soumettre au formateur')
