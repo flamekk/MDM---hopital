@@ -8,7 +8,7 @@ from . import store
 
 def main():
     parser = argparse.ArgumentParser(description="MDM hospitalier : démonstration reproductible")
-    parser.add_argument('action', choices=['demo', 'run', 'verify', 'api', 'import-patients'])
+    parser.add_argument('action', choices=['demo', 'hospital-demo', 'run', 'verify', 'api', 'import-patients'])
     parser.add_argument('--workspace', type=Path, default=Path('workspace'))
     parser.add_argument('--method', choices=['exact', 'weighted', 'probabilistic'], default='weighted')
     parser.add_argument('--base-run')
@@ -21,6 +21,15 @@ def main():
         if args.action == 'demo':
             generate(args.workspace, args.size)
             result = run(args.workspace, args.method, evaluate=not args.no_evaluation)
+        elif args.action == 'hospital-demo':
+            from .hospital import SCENARIOS, generate_hospital
+            for scenario in SCENARIOS:
+                target = args.workspace / scenario
+                if not (target / 'sources').exists():
+                    generate_hospital(target, args.size, scenario)
+                result = run(target, args.method, evaluate=not args.no_evaluation)
+                print(json.dumps(dict(scenario=scenario, run_id=result['run_id'], records=len(result['xrefs']), masters=len(result['masters']))))
+            return 0
         elif args.action == 'run':
             result = run(args.workspace, args.method, args.base_run, not args.no_evaluation)
         elif args.action == 'import-patients':

@@ -2,6 +2,8 @@
 
 Ce document complète le [rapport](rapport.md), le [guide pratique](guide_etape_par_etape.md) et le [déroulé de soutenance](soutenance.md). Les chiffres cités viennent des exécutions consignées dans le dépôt. Compléter les noms du groupe et présenter la répartition réelle du travail.
 
+La version personnalisée **Hôpital Al Amal** reprend les six onglets du premier MDM patient pour les trois domaines et ajoute les dossiers hospitaliers. Le [guide hospitalier](hopital_al_amal.md) détaille le parcours actuel, les allergies et les nouvelles validations.
+
 ## 1. Le projet en une phrase
 
 **Nous construisons un hub MDM hospitalier qui rapproche les identités de plusieurs applications, mesure leur qualité et conserve la justification de chaque décision pour les patients, le personnel et les produits.**
@@ -23,7 +25,7 @@ MDM signifie Master Data Management : gestion des données de référence commun
 | Relations | Données opérationnelles patients historiques | Exemples d’allergies, d’affectations et de stocks rattachés aux identités |
 | Restitution | Dashboard et notebook patients | Dashboard des trois domaines, CSV, API de lecture et dossier de soutenance |
 | Base serveur | Sans nouvelle projection relationnelle | Schéma PostgreSQL et générateur d’export SQL ; interface active sur SQLite |
-| Vérification | Quatre tests de réconciliation initiaux | 25 tests locaux, dont les huit sections et un parcours complet de revue |
+| Vérification | Quatre tests de réconciliation initiaux | 39 tests locaux, dont le parcours commun des trois MDM, les arbitrages et les déclarations d’allergies |
 
 Le commit initial `070c381` permet de retrouver la base. Les ajouts sont regroupés dans la branche `amelioration-projet-scolaire`. `legacy_app.py` conserve l’ancienne interface ; le notebook et les données historiques restent disponibles.
 
@@ -69,7 +71,7 @@ Montrer la précision et le rappel, puis dire : « Une précision élevée ne ve
 2. Lire les caractéristiques du score et le motif.
 3. Saisir un identifiant de Steward et une justification.
 4. Enregistrer CONFIRM, REJECT ou ESCALATE selon les preuves disponibles.
-5. Garder « Reprendre les décisions de cette version » coché et exécuter le pipeline.
+5. Dans Réconciliation, préparer la proposition puis publier la version réconciliée.
 6. Consulter la nouvelle version et son lignage.
 
 Dire : « La décision est enregistrée immédiatement. Son application crée une nouvelle version ; elle ne réécrit pas la version consultée. Une confirmation ne contourne jamais une contradiction critique. »

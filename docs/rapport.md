@@ -1,5 +1,7 @@
 # Plateforme MDM hospitalière — rapport de projet
 
+La version **Hôpital Al Amal** reprend le parcours initial en six onglets pour les patients, le personnel et les produits. Elle ajoute une revue des conflits d’attributs effectivement appliquée lors de la publication, une préparation de réconciliation sans écriture et huit tables hospitalières liées. Voir le [guide de la version hospitalière](hopital_al_amal.md).
+
 **Groupe et membres : à compléter. Validation du sujet : à obtenir auprès du formateur.**
 
 ## Contexte et objectifs

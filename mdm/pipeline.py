@@ -5,25 +5,32 @@ from .config import DOMAINS, FS, METHODS, RULE_VERSION, THRESHOLDS
 from .engine import ingest, candidates, compare, cluster, golden_records, quality
 from .io import digest, read_csv, write_csv
 from . import store
+from .hospital import load_related, apply_attribute_decisions, allergy_rows
 
 
-def run(root, method="weighted", base_run=None, evaluate=True):
+def run(root, method="weighted", base_run=None, evaluate=True, persist=True):
     if method not in METHODS:
         raise ValueError("Méthode inconnue.")
     root = Path(root)
     data = ingest(root)
     inherited, previous = {}, None
+    attribute_decisions, clinical_decisions = {}, {}
     if base_run:
         previous = store.load_run(root, base_run)
         if previous['manifest'] != data['manifest'] or previous['rules_version'] != RULE_VERSION:
             raise ValueError("Sources ou règles modifiées : lancer une exécution indépendante puis refaire la revue.")
         inherited = dict(previous.get('applied_decisions', {}))
         inherited.update(store.decisions(root, base_run))
+        attribute_decisions = dict(previous.get('applied_attribute_decisions', {}))
+        attribute_decisions.update(store.extra_decisions(root, base_run, 'attribute'))
+        clinical_decisions = dict(previous.get('applied_clinical_decisions', {}))
+        clinical_decisions.update(store.extra_decisions(root, base_run, 'clinical'))
     payload = dict(run_id=str(uuid.uuid4()), created_at=store.utc(), rules_version=RULE_VERSION,
                    method=method, parent_run=base_run, manifest=data['manifest'], source_fingerprint=digest(data['manifest']),
                    rules=dict(thresholds=THRESHOLDS, likelihoods=FS), applied_decisions=inherited,
                    catalogue=data['catalogue'], raw=data['raw'], standardized=data['clean'],
                    issues=data['issues'], quality=[], pairs=[], masters=[], xrefs=[], provenance=[], events=[], metrics=[], lineage=[], related={})
+    payload.update(applied_attribute_decisions=attribute_decisions, applied_clinical_decisions=clinical_decisions)
     for domain, rows in data['clean'].items():
         if not rows:
             continue
@@ -49,16 +56,10 @@ def run(root, method="weighted", base_run=None, evaluate=True):
             current = assess(truth_path, [dict(r, domain=domain) for r in rows], scored, xrefs)
             payload['metrics'].append(dict(domain=domain, method=method, stage="current_version", **current))
     xref_by_key = {(r['domain'], r['source'], r['local_id']): r['master_id'] for r in payload['xrefs']}
-    for filename, domain in [('allergies.csv', 'patient'), ('affectations.csv', 'personnel'), ('stocks.csv', 'produit')]:
-        path = root / 'related' / filename
-        if path.exists():
-            linked = []
-            for r in read_csv(path):
-                master = xref_by_key.get((domain, r['source'], r['local_id']))
-                if not master:
-                    raise ValueError(f"Relation orpheline dans {filename}: {r['local_id']}")
-                linked.append(dict(r, master_id=master))
-            payload['related'][filename] = linked
+    payload['related'], payload['related_manifest'] = load_related(root, payload['xrefs'])
+    apply_attribute_decisions(payload, attribute_decisions)
+    if 'allergies.csv' in payload['related']:
+        payload['related']['allergies.csv'] = allergy_rows(payload)
     if previous:
         old = {(r['domain'], r['source'], r['local_id']): r['master_id'] for r in previous['xrefs']}
         links = {(old[k], v) for k, v in xref_by_key.items() if k in old}
@@ -69,6 +70,8 @@ def run(root, method="weighted", base_run=None, evaluate=True):
         raise AssertionError("Couverture des correspondances invalide.")
     if not store.verify(root):
         raise ValueError("Intégrité du journal invalide ; exécution refusée.")
+    if not persist:
+        return payload
     out = root / 'runs' / payload['run_id']
     out.mkdir(parents=True, exist_ok=False)
     (out / 'snapshot.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -77,5 +80,7 @@ def run(root, method="weighted", base_run=None, evaluate=True):
     for domain, rows in payload['standardized'].items():
         if rows:
             write_csv(out / f'standardized_{domain}.csv', rows)
+    for name, rows in payload['related'].items():
+        write_csv(out / f'related_{name}', rows)
     store.save_run(root, payload)
     return payload

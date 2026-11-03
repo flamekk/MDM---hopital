@@ -1,5 +1,16 @@
 # Historique des améliorations
 
+## Version Hôpital Al Amal — 3 novembre 2026
+
+- Restauration des six onglets du MDM patient initial, communs aux trois domaines, et des scénarios S1/S2/S3.
+- Nouvelle interface claire, fiches détaillées, comparaison côte à côte et vocabulaire hospitalier.
+- Arbitrage des attributs appliqué au Golden Record de la version suivante, avec la valeur et la source réellement choisies.
+- Réconciliation en deux étapes : aperçu sans écriture puis publication d’un snapshot.
+- Allergies structurées et sourcées, revue clinique déclarative indépendante des identités et invalidation d’une validation lorsque la déclaration source change.
+- Séjours et contacts patients, affectations/formations/gardes du personnel, lots et parc biomédical.
+- Huit tables liées et export de leurs données dans chaque version.
+- Tests métier et interface étendus aux parcours d’arbitrage, de déclaration clinique et de changement de scénario.
+
 ## Version scolaire enrichie — 2 novembre 2026
 
 Point de départ : dépôt `flamekk/MDM---hopital`, commit `070c381`.

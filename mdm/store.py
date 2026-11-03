@@ -24,6 +24,12 @@ def connect(root):
     CREATE TABLE IF NOT EXISTS decisions(event_id TEXT PRIMARY KEY, run_id TEXT NOT NULL REFERENCES runs(run_id), case_id TEXT NOT NULL,
       decision TEXT NOT NULL CHECK(decision IN ('CONFIRM','REJECT','ESCALATE')), reviewer TEXT NOT NULL, comment TEXT NOT NULL, created_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS audit(seq INTEGER PRIMARY KEY AUTOINCREMENT, event TEXT NOT NULL, previous_hash TEXT NOT NULL, event_hash TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS attribute_decisions(event_id TEXT PRIMARY KEY, run_id TEXT NOT NULL REFERENCES runs(run_id), case_id TEXT NOT NULL,
+      decision TEXT NOT NULL CHECK(decision IN ('SELECT_VALUE','ESCALATE')), selected_value TEXT NOT NULL, selected_source TEXT NOT NULL,
+      selected_local_id TEXT NOT NULL, reviewer TEXT NOT NULL, comment TEXT NOT NULL, created_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS clinical_decisions(event_id TEXT PRIMARY KEY, run_id TEXT NOT NULL REFERENCES runs(run_id), assertion_id TEXT NOT NULL,
+      source_hash TEXT NOT NULL, decision TEXT NOT NULL CHECK(decision IN ('CONFIRM','REFUTE','REQUEST_INFO')),
+      reviewer TEXT NOT NULL, reviewer_role TEXT NOT NULL, comment TEXT NOT NULL, created_at TEXT NOT NULL);
     """)
     try:
         yield db
@@ -95,6 +101,59 @@ def audit_log(root):
         return [dict(r) for r in db.execute("SELECT * FROM audit ORDER BY seq")]
 
 
+def extra_decisions(root, run_id, kind):
+    table, key = {'attribute': ('attribute_decisions', 'case_id'), 'clinical': ('clinical_decisions', 'assertion_id')}[kind]
+    with connect(root) as db:
+        return {r[key]: dict(r) for r in db.execute(f'SELECT * FROM {table} WHERE run_id=? ORDER BY rowid', (run_id,))}
+
+
+def _save_extra(root, table, action, event):
+    with connect(root) as db:
+        db.execute('BEGIN IMMEDIATE')
+        fields = ','.join(event)
+        values = ','.join(':'+k for k in event)
+        db.execute(f'INSERT INTO {table} ({fields}) VALUES ({values})', event)
+        audit(db, dict(action=action, **event))
+        db.commit()
+    return event
+
+
+def attribute_review(root, run_id, case_id, decision, reviewer, comment, candidate=None):
+    from .hospital import attribute_conflicts
+    from .config import DOMAINS
+    if not verify(root):
+        raise ValueError('Intégrité du journal invalide.')
+    if not reviewer.strip() or not comment.strip():
+        raise ValueError('Réviseur et justification obligatoires.')
+    payload = load_run(root, run_id)
+    conflict = next((r for r in attribute_conflicts(payload) if r['case_id'] == case_id), None)
+    if not conflict or decision not in {'SELECT_VALUE', 'ESCALATE'}:
+        raise ValueError('Conflit ou décision inconnu.')
+    if decision == 'SELECT_VALUE' and conflict['field'] in DOMAINS[conflict['domain']]['critical'] + ['qualified_id', 'id_issuer']:
+        raise ValueError('Cet attribut nécessite une correction des sources.')
+    candidate = candidate or {}
+    if decision == 'SELECT_VALUE' and candidate not in conflict['candidates']:
+        raise ValueError('Choisir une valeur effectivement observée dans les sources.')
+    event = dict(event_id=str(uuid.uuid4()), run_id=run_id, case_id=case_id, decision=decision,
+                 selected_value=candidate.get('value', ''), selected_source=candidate.get('source', ''),
+                 selected_local_id=candidate.get('local_id', ''), reviewer=reviewer.strip(), comment=comment.strip(), created_at=utc())
+    return _save_extra(root, 'attribute_decisions', 'ATTRIBUTE_REVIEW', event)
+
+
+def clinical_review(root, run_id, assertion_id, decision, reviewer, reviewer_role, comment):
+    if not verify(root):
+        raise ValueError('Intégrité du journal invalide.')
+    if not reviewer.strip() or not comment.strip() or reviewer_role not in {'Médecin', 'Pharmacien'}:
+        raise ValueError('Identifiant, fonction clinique déclarée et justification obligatoires.')
+    payload = load_run(root, run_id)
+    assertion = next((r for r in payload.get('related', {}).get('allergies.csv', []) if r.get('assertion_id') == assertion_id), None)
+    if not assertion or decision not in {'CONFIRM', 'REFUTE', 'REQUEST_INFO'}:
+        raise ValueError('Déclaration ou décision inconnue.')
+    event = dict(event_id=str(uuid.uuid4()), run_id=run_id, assertion_id=assertion_id, source_hash=assertion['source_hash'],
+                 decision=decision, reviewer=reviewer.strip(), reviewer_role=reviewer_role, comment=comment.strip(), created_at=utc())
+    return _save_extra(root, 'clinical_decisions', 'CLINICAL_REVIEW', event)
+
+
 def verify(root):
     previous = "GENESIS"
     for row in audit_log(root):
@@ -104,6 +163,7 @@ def verify(root):
     # Vérifie aussi les données par rapport aux événements du journal.
     with connect(root) as db:
         recorded_reviews = {}
+        recorded_attributes, recorded_clinical = {}, {}
         recorded_runs = {}
         for r in db.execute("SELECT event FROM audit"):
             event = json.loads(r[0])
@@ -111,8 +171,16 @@ def verify(root):
                 recorded_reviews[event['event_id']] = {k: v for k, v in event.items() if k != 'action'}
             elif event['action'] == 'PIPELINE_RUN':
                 recorded_runs[event['run_id']] = event['payload_hash']
+            elif event['action'] == 'ATTRIBUTE_REVIEW':
+                recorded_attributes[event['event_id']] = {k: v for k, v in event.items() if k != 'action'}
+            elif event['action'] == 'CLINICAL_REVIEW':
+                recorded_clinical[event['event_id']] = {k: v for k, v in event.items() if k != 'action'}
         actual_reviews = {r['event_id']: dict(r) for r in db.execute("SELECT * FROM decisions")}
         if actual_reviews != recorded_reviews:
+            return False
+        if {r['event_id']: dict(r) for r in db.execute('SELECT * FROM attribute_decisions')} != recorded_attributes:
+            return False
+        if {r['event_id']: dict(r) for r in db.execute('SELECT * FROM clinical_decisions')} != recorded_clinical:
             return False
         actual_runs = {r['run_id']: r for r in db.execute("SELECT * FROM runs")}
         if set(actual_runs) != set(recorded_runs):
