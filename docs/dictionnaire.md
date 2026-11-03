@@ -1,5 +1,22 @@
 # Dictionnaire et contrat des CSV
 
+## Extension Hôpital Al Amal
+
+Les relations ajoutent `assertion_id` (empreinte de l’identifiant de déclaration qualifié par sa table et sa source), `source_hash` (SHA-256 du contenu source) et `source_record` (copie de la déclaration brute). Les huit tables liées sont `allergies`, `sejours`, `contacts_urgence`, `affectations`, `formations`, `gardes`, `stocks` et `equipements`.
+
+| Relation / événement | Attributs complémentaires | Règles |
+| --- | --- | --- |
+| allergies | record_id, substance, allergy_category, manifestation, reported_severity, reported_at, provenance, clinical_status, validation_status | Statuts de revue : a_valider, confirmee, ecartee, a_completer ; aucune utilisation dans le matching |
+| sejours | service, care_type, admission_date, discharge_date, room, bed, care_status | Relation patient / épisode déclaré par la source |
+| contacts_urgence | contact_name, relationship, phone, provenance | Contact désigné distinct de l’identité patient |
+| formations / gardes | training_name, completion_date, renewal_date / shift_date, shift_period, service | Relations professionnelles sourcées, pas des clés d’identité |
+| stocks | lot, quantity, reorder_level, expiry_date, location | Quantités disponibles distinctes du conditionnement du produit maître |
+| equipements | serial_number, service, inventory_status, last_maintenance, next_maintenance | Instances physiques liées à une référence de modèle |
+| attribute_decisions | event_id, run_id, case_id, decision, selected_value, selected_source, selected_local_id, reviewer, comment, created_at | SELECT_VALUE ou ESCALATE ; candidat observé obligatoire ; publication dans une nouvelle version |
+| clinical_decisions | event_id, run_id, assertion_id, source_hash, decision, reviewer, reviewer_role, comment, created_at | CONFIRM, REFUTE ou REQUEST_INFO ; Médecin / Pharmacien déclarés, justification obligatoire |
+
+La provenance d’un attribut arbitré porte la règle `HUMAN_SELECTED_VALUE` et le statut `RESOLVED`. Les alternatives restent conservées. Une ancienne décision ne modifie pas un groupe dont l’UUID a changé. Les relations brutes ne sont pas réécrites par une décision ; la version conserve la décision et sa projection.
+
 Les noms physiques du prototype sont anglais. Les champs texte sont normalisés sans accents et en minuscules pour comparer les valeurs. Les valeurs d’origine restent dans la zone brute. Les types ci-dessous décrivent la projection PostgreSQL ; SQLite conserve des snapshots JSON.
 
 ## Champs communs

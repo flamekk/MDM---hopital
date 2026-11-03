@@ -13,3 +13,5 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python -m mdm demo
       - run: python -m mdm verify
+      - run: python -m mdm hospital-demo --workspace workspace_hospital --size 12
+      - run: python -m mdm verify --workspace workspace_hospital/S1_5pct

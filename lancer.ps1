@@ -11,8 +11,8 @@ if ($Installer) {
     & $projectPython -m pip install -r requirements-lock.txt
     if ($LASTEXITCODE -ne 0) { throw 'Installation des dépendances échouée.' }
 }
-if (-not (Test-Path -LiteralPath 'workspace\sources')) {
-    & $projectPython -m mdm demo
+if (-not (Test-Path -LiteralPath 'workspace_hospital\S1_5pct\sources')) {
+    & $projectPython -m mdm hospital-demo --workspace workspace_hospital
     if ($LASTEXITCODE -ne 0) { throw 'Initialisation échouée.' }
 }
 & $projectPython -m streamlit run app.py

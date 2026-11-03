@@ -1,5 +1,17 @@
 # Vérifications réalisées
 
+## Hôpital Al Amal — 3 novembre 2026
+
+- **39 tests réussis** : les six onglets du projet patient sont présents dans chacun des trois domaines ; les cinq tests d’interface couvrent aussi les arbitrages, la publication et la revue des déclarations d’allergies.
+- La préparation de réconciliation ne crée ni snapshot ni événement de publication. L’arbitrage d’un attribut conserve le candidat et sa source ; une validation d’allergie ne modifie ni les paires ni les correspondances d’identité.
+- Une modification de la déclaration source empêche la reprise de sa validation précédente. La copie source brute reste conservée dans `source_record`.
+- Trois scénarios de 459 identités : S1 produit 183 maîtres, S2 en produit 251 et S3 en produit 349 avant décisions humaines.
+- Huit tables rattachées : 16 déclarations d’allergies, 48 séjours, 24 contacts désignés, 48 affectations, 48 formations, 48 gardes, 48 lignes de stock et 8 équipements dans le jeu initial S1.
+- Les données de travail précédentes et l’interface `legacy_app.py` sont conservées. Le nouveau jeu utilise `workspace_hospital`.
+- Export SQL PostgreSQL généré à partir du snapshot hospitalier ; exécution serveur toujours distincte et non vérifiée dans cette session.
+
+## Première version enrichie — 2 novembre 2026
+
 Vérifications locales du 2 novembre 2026, Python 3.13, versions des paquets dans `requirements-lock.txt`.
 
 | Contrôle | Résultat |

@@ -1,5 +1,11 @@
 # Architecture du hub hospitalier
 
+La version **Hôpital Al Amal** ajoute un parcours commun de six onglets et trois scénarios pour chacun des domaines. Voir [le guide hospitalier](hopital_al_amal.md). Les huit tables liées conservent leur contenu brut, leur empreinte et leur rattachement à un maître ; leur contenu n’est pas utilisé dans les caractéristiques de matching.
+
+Les arbitrages d’attributs et les décisions cliniques disposent de tables d’événements transactionnelles distinctes, intégrées à la vérification du journal. Un arbitrage ne peut retenir qu’un candidat observé. Une validation d’allergie porte sur une déclaration et son empreinte ; une modification de cette déclaration invalide sa réapplication. Les fonctions cliniques restent déclaratives dans la démonstration sans authentification.
+
+La préparation de réconciliation utilise `persist=False` : elle calcule une proposition sans créer de snapshot ou d’événement de publication. Le bouton de publication recalcule les contrôles, crée une nouvelle version et conserve les anciennes.
+
 Le dépôt initial est conservé : notebook patient, CSV historiques, moteur `reconciliation.py`, tests associés et interface déplacée vers `legacy_app.py`. Le nouveau moteur `mdm/` reconstruit lui-même les rapprochements des trois domaines.
 
 ```mermaid

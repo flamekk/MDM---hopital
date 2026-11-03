@@ -1,6 +1,6 @@
 # Résultats mesurés du prototype
 
-Version : `6667008d-af5e-410e-a281-736425f7c1e0`. Exécutée le 2026-11-02T09:50:54.938091+00:00 (UTC). Règles 2.0.1, méthode weighted.
+Version : `2c4b3399-2585-4c37-b0c5-2d0e6f8bfb18`. Exécutée le 2026-11-03T13:00:44.518504+00:00 (UTC). Règles 2.0.1, méthode weighted.
 
 11 tables sources, 459 identités locales, 183 fiches maîtres, 42 anomalies.
 
